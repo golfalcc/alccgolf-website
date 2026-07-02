@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Golf Course" description="ALCC's 18-hole golf course in Mount Union, PA.">
+  <PageHero title="Golf Course" subtitle="A classic Pennsylvania course with history dating back generations." />
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2>Course Overview</h2>
+          <p>American Legion Country Club's course winds through the hills of
+          Mount Union, offering a mix of challenging par 4s, scenic elevation
+          changes, and well-maintained greens. Whether you're a low-handicap
+          regular or a weekend golfer, the layout rewards smart course
+          management.</p>
+          <p>The grounds crew keeps the course in tournament-ready condition
+          throughout the season under the direction of our superintendent.</p>
+          <p>The original 18-hole layout traces back to golf course architect
+          <a href="/history/prominent-individuals">Tom Bendelow</a>, who
+          envisioned the course on this site in the 1920s. Read more on the
+          <a href="/history">club history</a> page.</p>
+        </div>
+        <img class="course-photo" src="/images/golf-course/course-1.jpg" alt="Aerial view of the American Legion Country Club golf course" loading="lazy" />
+      </div>
+
+      <h2>Tee Times & Pace of Play</h2>
+      <p>Members and guests can book tee times through the pro shop. Call
+      ahead during peak weekend hours to guarantee your preferred time.</p>
+
+      <div class="gallery grid grid--2">
+        <img src="/images/golf-course/course-2.jpg" alt="Golf course fairway at ALCC" loading="lazy" />
+        <img src="/images/golf-course/course-drawing.png" alt="Illustrated drawing of the ALCC course" loading="lazy" />
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn--red" href="tel:18145424343">Call the Pro Shop</a>
+        <a class="btn btn--navy" href="/rates">View Rates</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .two-col { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem; }
+  .course-photo { width: 100%; height: 100%; min-height: 220px; object-fit: cover; border-radius: var(--radius); }
+  .gallery { margin: 2rem 0; }
+  .gallery img { width: 100%; border-radius: var(--radius); object-fit: cover; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+</style>

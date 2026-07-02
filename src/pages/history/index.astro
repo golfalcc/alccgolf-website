@@ -1,0 +1,142 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Card from '../../components/Card.astro';
+
+const entries = (await getCollection('history')).sort((a, b) => a.data.order - b.data.order);
+
+const slugMap: Record<string,string> = {
+  "ladies-club-champions": "Ladies' Club Champions",
+  "mens-club-champions": "Men's Club Champions",
+  "seniors-club-champions": "Seniors Club Champions",
+  "alcc-aces": "ALCC Aces",
+  "twilight-league": "Twilight League",
+  "prominent-individuals": "Prominent Individuals in ALCC History",
+  "route-22-cup": "Route 22 Cup",
+};
+---
+
+<BaseLayout title="History" description="The history of American Legion Country Club, founded in 1924 as the Juniata Valley Colony Club.">
+  <PageHero title="History" subtitle="From the Juniata Valley Colony Club to American Legion Country Club — a century of Pennsylvania golf." />
+
+  <section class="section">
+    <div class="container narrative">
+      <span class="eyebrow">Juniata Valley Colony Club — Established 1927</span>
+      <p>In the heart of Pennsylvania's Juniata Valley, the story of American
+      Legion Country Club unfolds as one of vision, collaboration, and
+      community. It began on August 26, 1924, when R.P.M. Davis, a retired
+      banker and manufacturer, called a meeting at Mount Union High School to
+      launch what would become the largest public enterprise ever undertaken
+      by the people of Mount Union — a country club and summer colony on the
+      300-acre Walter Gifford farm, organized as the Juniata Valley Realty
+      Corporation and Juniata Valley Country Club with 128 stockholders and
+      charter members.</p>
+
+      <p>The clubhouse, swimming pool, tennis courts, and an 18-hole golf
+      course were completed by 1926, drawing influential members including
+      Governor J.S. Fisher, former Governor William C. Sproul, Pennsylvania
+      Railroad President General W.W. Atterbury, and Penn State President
+      Ralph D. Hetzel. The St. Patrick's Day Flood of 1936 devastated the
+      property and pushed the club into bankruptcy; after a brief,
+      short-lived sale, The American Legion purchased the club on June 6,
+      1937, and transformed it into the American Legion Country Club that
+      continues today. Membership grew sharply after World War II, prompting
+      a clubhouse addition in 1947.</p>
+
+      <p>The club's legacy is tied to two names in particular: golf course
+      architect <a href="/history/prominent-individuals">Tom Bendelow</a>,
+      who envisioned the 18-hole layout in a letter to R.P.M. Davis, and
+      <a href="/history/prominent-individuals">Anna Wagner Keichline</a>,
+      the pioneering architect who designed the main clubhouse building.</p>
+
+      <div class="gallery grid grid--3">
+        <figure>
+          <img src="/images/history/jvcc-seal.jpg" alt="Juniata Valley Colony Club seal and property map" loading="lazy" />
+          <figcaption>The original Juniata Valley Colony Club seal and property map.</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/history/clubhouse-construction.jpg" alt="Clubhouse under construction, 1927-1928" loading="lazy" />
+          <figcaption>The clubhouse under construction, 1927–1928.</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/history/1936-flood.jpg" alt="The 1936 St. Patrick's Day Flood" loading="lazy" />
+          <figcaption>Damage from the 1936 St. Patrick's Day Flood.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">From the Archives</span>
+      <h2>Newspaper Coverage Through the Years</h2>
+      <p>Scanned clippings from the club's archive — click any clipping to
+      open the full-resolution scan.</p>
+      <div class="archive-grid">
+        <a href="/images/archive/1924-founding.jpg" target="_blank" rel="noopener">
+          <img src="/images/archive/1924-founding.jpg" alt="Mount Union Times, August 29, 1924 — coverage of the country club's founding" loading="lazy" />
+          <span>Mount Union Times, Aug. 29, 1924 — "Mount Union to Have a Country Club"</span>
+        </a>
+        <a href="/images/archive/1928-season-opening.jpg" target="_blank" rel="noopener">
+          <img src="/images/archive/1928-season-opening.jpg" alt="Altoona Tribune, May 9, 1928 — JVCC opening for the season" loading="lazy" />
+          <span>Altoona Tribune, May 9, 1928 — JVCC opens for the season</span>
+        </a>
+        <a href="/images/archive/1938-sale-to-american-legion.jpg" target="_blank" rel="noopener">
+          <img src="/images/archive/1938-sale-to-american-legion.jpg" alt="Mount Union Times, April 7, 1938 — club sale to The American Legion" loading="lazy" />
+          <span>Mount Union Times, Apr. 7, 1938 — club sold to The American Legion</span>
+        </a>
+        <a href="/images/archive/1951-alcc-plaque.jpg" target="_blank" rel="noopener">
+          <img src="/images/archive/1951-alcc-plaque.jpg" alt="Huntingdon Daily News, April 13, 1951 — ALCC dedication plaque" loading="lazy" />
+          <span>Huntingdon Daily News, Apr. 13, 1951 — ALCC dedication plaque</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--off-white">
+    <div class="container">
+      <span class="eyebrow">Explore</span>
+      <h2>Records &amp; Notable Figures</h2>
+      <div class="grid grid--3">
+        {entries.map((e) => (
+          <Card
+            title={slugMap[e.slug] ?? e.data.title}
+            href={`/history/${e.slug}`}
+            description={e.data.summary}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .narrative { max-width: 780px; }
+  .gallery { margin-top: 2.5rem; }
+  .gallery figure { margin: 0; }
+  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
+  .gallery figcaption { font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem; }
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .archive-grid a { color: inherit; }
+  .archive-grid a:hover { text-decoration: none; }
+  .archive-grid img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-gray-light);
+  }
+  .archive-grid span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>

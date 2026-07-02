@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Card from '../components/Card.astro';
+
+const tournaments = (await getCollection('tournaments')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const outings2026 = [
+  { name: "Elinor Wible Memorial", date: "June 6" },
+  { name: "Huntingdon Regional Ballet", date: "June 19" },
+  { name: "June Invitational", date: "June 26–28" },
+  { name: "Mount Union Wrestling Club", date: "July 11" },
+  { name: "Fort Shirley Lions", date: "August 15" },
+  { name: "Huntingdon Police Officers Association", date: "August 21" },
+];
+---
+
+<BaseLayout title="Events" description="Tournament schedule and group outings at American Legion Country Club.">
+  <PageHero title="Events" subtitle="The 2026 schedule is available now." />
+
+  <section class="section">
+    <div class="container">
+      <p>See the full calendar for exact dates, or jump straight to one of
+      ALCC's signature tournaments below.</p>
+      <a class="btn btn--navy" href="/calendar">View Full Calendar</a>
+
+      <h2 style="margin-top:2.5rem;">2026 Group Outings &amp; Charity Events</h2>
+      <table>
+        <thead><tr><th>Event</th><th>Date</th></tr></thead>
+        <tbody>
+          {outings2026.map((e) => (
+            <tr><td>{e.name}</td><td>{e.date}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p><em>Interested in booking ALCC as a venue for your own outing?
+      Contact Stefan at (814) 542-4343.</em></p>
+
+      <h2 style="margin-top:2.5rem;">ALCC Major Tournaments</h2>
+      <div class="grid grid--3">
+        {tournaments.map((t) => (
+          <Card
+            title={t.data.title}
+            href={`/events/${t.data.urlSlug}`}
+            description={t.data.summary}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

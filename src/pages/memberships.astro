@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Memberships" description="Membership applications at American Legion Country Club.">
+  <PageHero title="Memberships" subtitle="Applications available now for the 2026 season." />
+
+  <section class="section">
+    <div class="container">
+      <h2>2026 Membership Application</h2>
+      <p>Membership applications for the 2026 season are available now
+      through the pro shop and club office. Reach out below to request the
+      current application and get details on membership categories and
+      pricing for the season.</p>
+
+      <a class="btn btn--red" href="/contact">Request the 2026 Application</a>
+
+      <p style="margin-top:2rem;"><em>The club's membership tiers and
+      pricing are currently published as a downloadable PDF rather than
+      page text. Once that information is finalized for the season, add it
+      directly to <code>src/pages/memberships.astro</code> as a table so
+      members can see it without downloading a file.</em></p>
+    </div>
+  </section>
+</BaseLayout>

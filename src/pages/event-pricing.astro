@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Event Pricing" description="Pricing for outings, banquets, and private events at ALCC.">
+  <PageHero title="Event Pricing" subtitle="Host your outing, banquet, or gathering at ALCC." />
+
+  <section class="section">
+    <div class="container">
+      <h2>Golf Outings</h2>
+      <table>
+        <thead><tr><th>Package</th><th>Includes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Shotgun Outing</td><td>18 holes, cart, box lunch</td><td>Contact for quote</td></tr>
+          <tr><td>Half-Day Outing</td><td>9 holes, cart</td><td>Contact for quote</td></tr>
+        </tbody>
+      </table>
+
+      <h2>StoneHouse Lounge Events</h2>
+      <table>
+        <thead><tr><th>Package</th><th>Includes</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Private Room Buyout</td><td>Lounge space, bar service</td><td>Contact for quote</td></tr>
+          <tr><td>Plated Dinner Package</td><td>Sit-down meal for groups</td><td>Contact for quote</td></tr>
+        </tbody>
+      </table>
+
+      <p>Interested in using ALCC as a venue? Contact Stefan at (814) 542-4343.</p>
+      <a class="btn btn--red" href="/contact">Request Event Pricing</a>
+    </div>
+  </section>
+</BaseLayout>

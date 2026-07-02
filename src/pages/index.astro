@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+
+const announcements = [
+  { text: "Membership applications available for the 2026 season", href: "/memberships" },
+  { text: "2026 tournament schedule is available through our Events portal", href: "/events" },
+  { text: "Central Counties events for 2026 are scheduled — see the CCGA page", href: "/events/central-counties" },
+  { text: "Interested in using ALCC as a venue? Contact Stefan at (814) 542-4343", href: "/contact" },
+];
+
+const quickLinks = [
+  { title: "Golf", href: "/golf-course", description: "18 holes of classic Pennsylvania golf.", image: "/images/golf-course/course-1.jpg" },
+  { title: "Lounge", href: "/stonehouse-lounge", description: "The StoneHouse Lounge — food and drink with a view of the course.", image: "/images/lounge/lounge-1.jpg" },
+  { title: "History", href: "/history", description: "Decades of champions, records, and club lore.", image: "/images/history/clubhouse-construction.jpg" },
+  { title: "Spring Classic", href: "/events/spring-classic", description: "The season-opening team event." },
+  { title: "Central Counties", href: "/events/central-counties", description: "CCGA series events hosted at ALCC.", image: "/images/central-counties/logo.png" },
+  { title: "June Invitational", href: "/events/june-invitational", description: "A longstanding flighted stroke-play invitational." },
+];
+---
+
+<BaseLayout title="Home" description="American Legion Country Club — golf course, StoneHouse Lounge, pool, and event venue in Mount Union, PA.">
+  <Hero
+    eyebrow="Mount Union, Pennsylvania"
+    title="Welcome to the American Legion Country Club"
+    subtitle="A full-service golf course, lounge, and pool club — home to a century of Pennsylvania golf tradition."
+    ctaLabel="See All Upcoming Events"
+    ctaHref="/events"
+    image="/images/home/hero-1.jpg"
+  />
+
+  <div class="announcement-bar">
+    <div class="container">
+      <ul>
+        {announcements.map((a) => (
+          <li><a href={a.href}>{a.text}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Explore the Club</span>
+      <h2>Golf, Lounge & History</h2>
+      <div class="grid grid--3">
+        {quickLinks.map((q) => (
+          <Card title={q.title} href={q.href} description={q.description} image={q.image} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container leadership">
+      <div>
+        <span class="eyebrow eyebrow--light">Club Leadership</span>
+        <h2>Who Runs ALCC</h2>
+        <ul class="leadership__list">
+          <li><strong>General Manager:</strong> Stefan Morgan</li>
+          <li><strong>Lounge Manager:</strong> Brandi Smith</li>
+          <li><strong>Superintendent:</strong> Paul Smith</li>
+          <li><strong>Major Tournament Director:</strong> Bruce Smith</li>
+        </ul>
+      </div>
+      <div class="leadership__cta">
+        <p>Questions about tee times, membership, or booking the club for an event?</p>
+        <a class="btn btn--red" href="tel:18145424343">Call Now: (814) 542-4343</a>
+        <a class="btn btn--outline" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .eyebrow--light { color: #FFD966; }
+  .leadership {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .leadership__list { list-style: none; margin: 0; padding: 0; }
+  .leadership__list li { margin-bottom: 0.5rem; }
+  .leadership__cta { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+  @media (max-width: 800px) {
+    .leadership { grid-template-columns: 1fr; }
+  }
+</style>

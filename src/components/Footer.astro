@@ -1,0 +1,104 @@
+---
+const quickLinks = [
+  { label: "Golf Course", href: "/golf-course" },
+  { label: "StoneHouse Lounge", href: "/stonehouse-lounge" },
+  { label: "Pool", href: "/pool" },
+  { label: "Memberships", href: "/memberships" },
+  { label: "Events", href: "/events" },
+  { label: "History", href: "/history" },
+  { label: "Members", href: "/members" },
+  { label: "Pro Shop", href: "/pro-shop" },
+  { label: "Contact Us", href: "/contact" },
+];
+---
+
+<footer class="site-footer">
+  <div class="stripe-flag"></div>
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <div class="footer__logo-wrap">
+        <img class="footer__logo" src="/images/home/logo.png" alt="American Legion Country Club" />
+      </div>
+      <p>American Legion Country Club<br />1 Country Club Road<br />Mount Union, PA 17066</p>
+      <p><a href="tel:18145424343">(814) 542-4343</a><br /><a href="mailto:golf.alcc@gmail.com">golf.alcc@gmail.com</a></p>
+    </div>
+    <div class="footer__col">
+      <h4>Quick Links</h4>
+      <ul>
+        {quickLinks.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Club Leadership</h4>
+      <ul class="staff">
+        <li>General Manager: Stefan Morgan</li>
+        <li>Lounge Manager: Brandi Smith</li>
+        <li>Superintendent: Paul Smith</li>
+        <li>Major Tournament Director: Bruce Smith</li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/americanlegioncountryclub/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/alccgolfpa/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/alccmu" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      &copy; {new Date().getFullYear()} American Legion Country Club. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-blue-dark);
+    color: rgba(255,255,255,0.85);
+    margin-top: 3rem;
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 1.25rem 2rem;
+  }
+  .footer__col h4 {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .footer__logo-wrap {
+    display: inline-block;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer__logo { height: 40px; width: auto; display: block; }
+  .footer__col ul { list-style: none; margin: 0; padding: 0; }
+  .footer__col li { margin-bottom: 0.5rem; }
+  .footer__col a { color: rgba(255,255,255,0.85); }
+  .footer__col a:hover { color: var(--color-white); }
+  .staff li { font-size: 0.9rem; }
+  .footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+  }
+  @media (max-width: 900px) {
+    .footer__inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .footer__inner { grid-template-columns: 1fr; }
+  }
+</style>

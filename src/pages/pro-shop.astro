@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const brands = ["Titleist", "FootJoy", "Nike Golf", "Bridgestone", "Cleveland", "BlueTees", "Under Armour"];
+const resellerBrands = ["TaylorMade", "Callaway", "Cobra", "Mizuno", "PING"];
+---
+
+<BaseLayout title="Pro Shop" description="The ALCC Pro Shop — official retailer for Titleist, FootJoy, Nike Golf, and more.">
+  <PageHero title="Pro Shop" subtitle="Formerly the Pin Seekers Bar room — now home to the club's fully stocked Pro Shop." />
+
+  <section class="section">
+    <div class="container">
+      <p>In 2014, the idea began as a simple concept: transforming the
+      former men's locker room at ALCC into a gathering spot. Members
+      wanted a place that offered easier access, great views of the first
+      tee, and a relaxed atmosphere for enjoying the 19th hole after a
+      round.</p>
+
+      <p>The project was financed and completed almost entirely by
+      members, who replaced nearly 100 lockers, a shower area, an office
+      lounge, and storage space with a comfortable room filled with tables,
+      chairs, barstools — and most importantly, a well-stocked bar.</p>
+
+      <p>A few years later, as the original Pro Shop began to show its age,
+      management relocated it into the Pin Seekers Bar room and added a
+      manager's office. Today, the space continues to evolve: golfers
+      enjoy a deck overlooking the putting green and first tee, along with
+      a fully stocked Pro Shop featuring many of today's top brands.</p>
+
+      <h2>Official Retailer For</h2>
+      <ul>
+        {brands.map((b) => <li>{b}</li>)}
+      </ul>
+      <p>Additional partnerships through local resellers provide {resellerBrands.join(', ')}.</p>
+
+      <p>If you'd like to order equipment, contact the pro shop with your
+      information and they'll provide a price quote.</p>
+
+      <a class="btn btn--red" href="tel:18145424343">Call the Pro Shop</a>
+    </div>
+  </section>
+</BaseLayout>

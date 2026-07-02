@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="StoneHouse Lounge" description="The StoneHouse Lounge & Bar at American Legion Country Club.">
+  <PageHero title="StoneHouse Lounge" subtitle="Great food, great company, great views." />
+
+  <section class="section">
+    <div class="container">
+      <img class="lounge-logo" src="/images/lounge/stonehouse-logo.png" alt="StoneHouse Lounge logo" loading="lazy" />
+      <h2>StoneHouse Lounge &amp; Bar</h2>
+      <p>Are you searching for the perfect venue for a wedding reception,
+      special celebration, or golf outing with an exceptional meal
+      afterward? Welcome to the StoneHouse Lounge &amp; Bar — where great
+      food, great company, and great views come together.</p>
+
+      <p>Our newly rebranded lounge offers comfortable seating for over 100
+      guests and features attentive, on-site staff ready to cater to your
+      event needs. Enjoy service from professional bartenders at our fully
+      stocked bar, ensuring your guests are well taken care of from start
+      to finish.</p>
+
+      <p>When weather permits, relax with a drink on our second-story deck
+      overlooking the golf course and its scenic surroundings — an ideal
+      backdrop for any gathering.</p>
+
+      <p>For availability, pricing, and event details, please contact the
+      golf shop.</p>
+
+      <div class="gallery grid grid--2">
+        <img src="/images/lounge/lounge-1.jpg" alt="Interior of the StoneHouse Lounge" loading="lazy" />
+        <img src="/images/lounge/lounge-2.jpg" alt="StoneHouse Lounge seating area" loading="lazy" />
+      </div>
+
+      <a class="btn btn--red" href="/contact">Contact the Golf Shop</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lounge-logo { max-width: 220px; margin-bottom: 1.5rem; }
+  .gallery { margin: 2rem 0; }
+  .gallery img { width: 100%; border-radius: var(--radius); object-fit: cover; }
+</style>

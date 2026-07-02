@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+interface Champion { year: string; name: string; partner?: string; notes?: string }
+interface Props {
+  title: string;
+  dates?: string;
+  format?: string;
+  entryFee?: string;
+  summary: string;
+  defendingChampion?: string;
+  champions?: Champion[];
+}
+const { title, dates, format, entryFee, summary, defendingChampion, champions = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={summary}>
+  <PageHero title={title} subtitle={summary} />
+
+  <section class="section">
+    <div class="container tournament-layout">
+      <div class="tournament-layout__main">
+        <slot />
+      </div>
+      <aside class="tournament-layout__side">
+        <div class="info-card">
+          <h3>Event Details</h3>
+          <dl>
+            {dates && (<><dt>Dates</dt><dd>{dates}</dd></>)}
+            {format && (<><dt>Format</dt><dd>{format}</dd></>)}
+            {entryFee && (<><dt>Entry Fee</dt><dd>{entryFee}</dd></>)}
+            {defendingChampion && (<><dt>Defending Champions</dt><dd>{defendingChampion}</dd></>)}
+          </dl>
+          <a class="btn btn--red" href="/contact">Contact the Pro Shop</a>
+        </div>
+      </aside>
+    </div>
+
+    {champions.length > 0 && (
+      <div class="container">
+        <h2>Past Champions</h2>
+        <table>
+          <thead><tr><th>Year</th><th>Champion(s)</th><th>Notes</th></tr></thead>
+          <tbody>
+            {champions.map((c) => (
+              <tr><td>{c.year}</td><td>{c.name}{c.partner ? ` / ${c.partner}` : ''}</td><td>{c.notes ?? ''}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .tournament-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+  .info-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-gray-light);
+    border-top: 4px solid var(--color-red);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .info-card dl { margin: 0 0 1.25rem; }
+  .info-card dt {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--color-blue);
+    margin-top: 0.75rem;
+  }
+  .info-card dd { margin: 0.15rem 0 0; }
+  @media (max-width: 800px) {
+    .tournament-layout { grid-template-columns: 1fr; }
+  }
+</style>

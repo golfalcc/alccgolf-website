@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content';
+import HistoryLayout from '../../layouts/HistoryLayout.astro';
+
+const entry = await getEntry('history', 'ladies-club-champions');
+const { Content } = await entry.render();
+---
+
+<HistoryLayout title={entry.data.title} summary={entry.data.summary}>
+  <Content />
+</HistoryLayout>

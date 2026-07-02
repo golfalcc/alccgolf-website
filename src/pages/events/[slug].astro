@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import TournamentLayout from '../../layouts/TournamentLayout.astro';
+
+export async function getStaticPaths() {
+  const tournaments = await getCollection('tournaments');
+  return tournaments.map((t) => ({
+    params: { slug: t.data.urlSlug },
+    props: { entry: t },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, dates, format, entryFee, summary, champions, defendingChampion } = entry.data;
+---
+
+<TournamentLayout
+  title={title}
+  dates={dates}
+  format={format}
+  entryFee={entryFee}
+  summary={summary}
+  champions={champions}
+  defendingChampion={defendingChampion}
+>
+  <Content />
+</TournamentLayout>

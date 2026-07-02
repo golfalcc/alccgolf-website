@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1>{title}</h1>
+    {subtitle && <p>{subtitle}</p>}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    background: var(--color-blue-dark);
+    color: var(--color-white);
+    padding: 3rem 0;
+    border-bottom: 4px solid var(--color-red);
+  }
+  .page-hero h1 { color: var(--color-white); margin-bottom: 0.25rem; }
+  .page-hero p { color: rgba(255,255,255,0.85); margin: 0; max-width: 640px; }
+</style>

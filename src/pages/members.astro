@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Members" description="Member resources for American Legion Country Club, including the ALCC Ladies.">
+  <PageHero title="Members" subtitle="Resources and updates for ALCC members." />
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="card__body">
+            <h3>ALCC Ladies</h3>
+            <p>In the annals of American Legion Country Club, the mark
+            left by our devoted lady golfers is impossible to overlook.
+            Their camaraderie and enthusiasm for the sport illuminate each
+            day at the club. This committed group gathers every Wednesday
+            evening for the Ladies' League, and their involvement extends
+            to courses throughout the region. Their dedication is evident
+            in their active role at the club, including running the food
+            stand at the Annual June Invitational — raising funds for
+            their organization while contributing to the golf course in
+            diverse ways.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Members Exchange</h3>
+            <p>A space for member classifieds and exchanges. This section
+            isn't published yet on the current site — add current listings
+            here in <code>src/pages/members.astro</code>, or link out to a
+            shared document, once the club is ready to use it.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem;">Questions about your membership? <a href="/contact">Contact the club office</a>.</p>
+    </div>
+  </section>
+</BaseLayout>

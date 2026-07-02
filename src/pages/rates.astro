@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Rates" description="Green fees, cart rates, and guest pricing at American Legion Country Club.">
+  <PageHero title="Rates" subtitle="Member and guest green fees and cart pricing." />
+
+  <section class="section">
+    <div class="container">
+      <h2>Member Cart Fees</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Members — 9 Hole Cart</td><td>$10.00</td></tr>
+          <tr><td>Members — 18 Hole Cart</td><td>$20.00</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Non-Member Fees</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Weekday 9 Holes (Walking)</td><td>$12.00</td></tr>
+          <tr><td>Weekday 9 Holes (with Cart)</td><td>$26.00</td></tr>
+          <tr><td>Weekday 18 Holes (Walking)</td><td>$20.00</td></tr>
+          <tr><td>Weekday 18 Holes (with Cart)</td><td>$36.00</td></tr>
+          <tr><td>Weekend 9 Holes (Walking)</td><td>$20.00</td></tr>
+          <tr><td>Weekend 9 Holes (with Cart)</td><td>$30.00</td></tr>
+          <tr><td>Weekend 18 Holes (Walking)</td><td>$25.00</td></tr>
+          <tr><td>Weekend 18 Holes (with Cart)</td><td>$46.00</td></tr>
+          <tr><td>Weekday Tee-Time Golf Pass / Victory Book</td><td>$27.00</td></tr>
+          <tr><td>Weekend Tee-Time Golf Pass / Victory Book</td><td>$41.00</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Cards Honored</h2>
+      <ul>
+        <li>American Cancer Society – Pennsylvania Golf Pass: $20.00 for 18 holes with cart</li>
+        <li>Central Counties Card: $20.00 for 18 holes with cart</li>
+      </ul>
+      <p>Passes are excluded during tournaments unless otherwise designated
+      by the Pro Shop. Active Military are admitted free with a Military ID.</p>
+
+      <p><em>Rates are current as published by the club and may change
+      seasonally — call the pro shop at (814) 542-4343 to confirm, or edit
+      <code>src/pages/rates.astro</code> when prices update.</em></p>
+
+      <div class="cta-row">
+        <a class="btn btn--red" href="/memberships">Memberships</a>
+        <a class="btn btn--navy" href="/event-pricing">Event Pricing</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+</style>

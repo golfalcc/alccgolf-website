@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Pool" description="The history of the ALCC pool, established in 1928.">
+  <PageHero title="Pool" subtitle="A century-old part of the club's story." />
+
+  <section class="section">
+    <div class="container">
+      <h2>ALCC Pool</h2>
+      <p>Established in <strong>1928</strong>, alongside the clubhouse, the
+      pool at ALCC was long a cornerstone of the club experience. For
+      generations it provided a place for families to gather, with a deep
+      end and diving board for the adventurous and a shallow section for
+      younger swimmers. From <strong>Memorial Day to Labor Day</strong>,
+      countless members enjoyed relaxing summer days by the water.</p>
+
+      <p>In recent years, however, the pool developed a significant leak,
+      ultimately leading to its closure. Safety concerns, combined with the
+      escalating cost of repairs, made it impractical to reopen without
+      major investment. While the American Legion Home Association has
+      explored several fundraising opportunities, the necessary funds have
+      not yet been secured.</p>
+
+      <p>As a result, the pool area will be filled in at some point in the
+      near future. At this time, there are no specific plans for how that
+      space will be repurposed.</p>
+
+      <p>Though it's disappointing to close a chapter that has been such a
+      meaningful part of ALCC's history, the club remains committed to
+      preserving and strengthening its future through thoughtful
+      improvements and long-term planning.</p>
+
+      <div class="gallery grid grid--3">
+        <img src="/images/pool/pool-1.jpg" alt="Historic photo of the ALCC pool" loading="lazy" />
+        <img src="/images/pool/pool-2.jpg" alt="Historic photo of the ALCC pool" loading="lazy" />
+        <img src="/images/pool/pool-3.jpg" alt="Historic photo of the ALCC pool" loading="lazy" />
+      </div>
+      <p class="caption"><em>The ALCC pool, in earlier years.</em></p>
+
+      <a class="btn btn--red" href="/contact">Questions? Contact the Club</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gallery { margin: 2rem 0 0.5rem; }
+  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
+  .caption { text-align: center; color: var(--color-gray); font-size: 0.9rem; margin-bottom: 2rem; }
+</style>
