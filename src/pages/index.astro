@@ -11,28 +11,28 @@ const announcements = [
 ];
 
 const quickLinks = [
-  { title: "Golf", href: "/golf-course", description: "18 holes of classic Pennsylvania golf.", image: "/images/golf-course/course-1.jpg" },
-  { title: "Lounge", href: "/stonehouse-lounge", description: "The StoneHouse Lounge — food and drink with a view of the course.", image: "/images/lounge/lounge-1.jpg" },
-  { title: "History", href: "/history", description: "Decades of champions, records, and club lore.", image: "/images/history/clubhouse-construction.jpg" },
-  { title: "Spring Classic", href: "/events/spring-classic", description: "The season-opening team event." },
-  { title: "Central Counties", href: "/events/central-counties", description: "CCGA series events hosted at ALCC.", image: "/images/central-counties/logo.png" },
-  { title: "June Invitational", href: "/events/june-invitational", description: "A longstanding flighted stroke-play invitational." },
+  { title: "Golf", href: "/golf-course", description: "18 holes of classic Pennsylvania golf.", image: "/images/golf-course/course-1.webp" },
+  { title: "Lounge", href: "/stonehouse-lounge", description: "The StoneHouse Lounge — food and drink with a view of the course.", image: "/images/lounge/stonehouse-logo.webp", imageFit: "contain", imageScale: 0.95 },
+  { title: "History", href: "/history", description: "Decades of champions, records, and club lore.", image: "/images/history/colony-club-fairway-7.webp" },
+  { title: "Spring Classic", href: "/events/spring-classic", description: "The season-opening team event.", image: "/images/spring-classic/logo.webp", imageFit: "contain" },
+  { title: "Central Counties", href: "/events/central-counties", description: "CCGA series events hosted at ALCC.", image: "/images/central-counties/logo.webp", imageFit: "contain" },
+  { title: "June Invitational", href: "/events/june-invitational", description: "A longstanding flighted stroke-play invitational.", image: "/images/june-invitational/2027.webp", imageFit: "contain" },
 ];
 ---
 
-<BaseLayout title="Home" description="American Legion Country Club — golf course, StoneHouse Lounge, pool, and event venue in Mount Union, PA.">
+<BaseLayout title="Home" description="American Legion Country Club — golf course, StoneHouse Lounge, and event venue in Mount Union, PA.">
   <Hero
     eyebrow="Mount Union, Pennsylvania"
     title="Welcome to the American Legion Country Club"
-    subtitle="A full-service golf course, lounge, and pool club — home to a century of Pennsylvania golf tradition."
+    subtitle="Home to a century of Pennsylvania golf tradition."
     ctaLabel="See All Upcoming Events"
     ctaHref="/events"
-    image="/images/home/hero-1.jpg"
+    image="/images/home/hero-painting.webp"
   />
 
   <div class="announcement-bar">
     <div class="container">
-      <ul>
+      <ul class="announcement-bar__list">
         {announcements.map((a) => (
           <li><a href={a.href}>{a.text}</a></li>
         ))}
@@ -46,11 +46,22 @@ const quickLinks = [
       <h2>Golf, Lounge & History</h2>
       <div class="grid grid--3">
         {quickLinks.map((q) => (
-          <Card title={q.title} href={q.href} description={q.description} image={q.image} />
+          <Card title={q.title} href={q.href} description={q.description} image={q.image} imageFit={q.imageFit} imageScale={q.imageScale} />
         ))}
       </div>
     </div>
   </section>
+
+  <section class="section section--off-white">
+    <div class="container weather-section">
+      <span class="eyebrow">Course Conditions</span>
+      <h2>Current Weather</h2>
+      <div class="weather-widget-wrap">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/40d38n77d88/mount-union/?unit=us" data-label_1="MOUNT UNION" data-label_2="PENNSYLVANIA" data-theme="original">MOUNT UNION</a>
+      </div>
+    </div>
+  </section>
+  <script is:inline>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
 
   <section class="section section--navy">
     <div class="container leadership">
@@ -74,6 +85,8 @@ const quickLinks = [
 </BaseLayout>
 
 <style>
+  .weather-section { text-align: center; }
+  .weather-widget-wrap { max-width: 350px; margin: 1.5rem auto 0; }
   .eyebrow--light { color: #FFD966; }
   .leadership {
     display: grid;

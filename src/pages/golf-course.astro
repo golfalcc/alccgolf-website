@@ -1,6 +1,60 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+
+// Official ALCC scorecard data, as of 04/01/2025 (Website/ALCC-Tees.pdf).
+const holes = [
+  { hole: 1, gold: 327, blue: 319, red: 317, silver: 304, white: 297, par: 4, hdcpM: 3, hdcpF: 11 },
+  { hole: 2, gold: 149, blue: 135, red: 131, silver: 115, white: 112, par: 3, hdcpM: 17, hdcpF: 9 },
+  { hole: 3, gold: 320, blue: 313, red: 306, silver: 294, white: 291, par: 4, hdcpM: 9, hdcpF: 13 },
+  { hole: 4, gold: 435, blue: 433, red: 357, silver: 324, white: 298, par: 4, hdcpM: 5, hdcpF: 1 },
+  { hole: 5, gold: 394, blue: 361, red: 310, silver: 276, white: 276, par: 4, hdcpM: 11, hdcpF: 7 },
+  { hole: 6, gold: 391, blue: 390, red: 319, silver: 253, white: 251, par: 4, hdcpM: 15, hdcpF: 3 },
+  { hole: 7, gold: 634, blue: 604, red: 534, silver: 508, white: 508, par: 6, hdcpM: 1, hdcpF: 5 },
+  { hole: 8, gold: 284, blue: 278, red: 278, silver: 278, white: 278, par: 4, hdcpM: 7, hdcpF: 15 },
+  { hole: 9, gold: 482, blue: 471, red: 460, silver: 377, white: 377, par: 5, hdcpM: 13, hdcpF: 17 },
+  { hole: 10, gold: 280, blue: 278, red: 272, silver: 270, white: 200, par: 4, hdcpM: 8, hdcpF: 16 },
+  { hole: 11, gold: 342, blue: 338, red: 323, silver: 322, white: 321, par: 4, hdcpM: 10, hdcpF: 14 },
+  { hole: 12, gold: 385, blue: 378, red: 368, silver: 273, white: 267, par: 4, hdcpM: 16, hdcpF: 8 },
+  { hole: 13, gold: 394, blue: 388, red: 339, silver: 337, white: 297, par: 4, hdcpM: 4, hdcpF: 2 },
+  { hole: 14, gold: 488, blue: 479, red: 465, silver: 387, white: 387, par: 5, hdcpM: 12, hdcpF: 12 },
+  { hole: 15, gold: 118, blue: 111, red: 99, silver: 99, white: 99, par: 3, hdcpM: 14, hdcpF: 18 },
+  { hole: 16, gold: 563, blue: 555, red: 521, silver: 485, white: 485, par: 5, hdcpM: 2, hdcpF: 6 },
+  { hole: 17, gold: 224, blue: 218, red: 180, silver: 173, white: 171, par: 3, hdcpM: 18, hdcpF: 4 },
+  { hole: 18, gold: 364, blue: 364, red: 314, silver: 312, white: 264, par: 4, hdcpM: 6, hdcpF: 10 },
+];
+
+const front = holes.slice(0, 9);
+const back = holes.slice(9, 18);
+
+function sum(list: typeof holes, key: keyof (typeof holes)[number]) {
+  return list.reduce((total, h) => total + (h[key] as number), 0);
+}
+
+const totals = {
+  gold: { out: sum(front, 'gold'), in: sum(back, 'gold') },
+  blue: { out: sum(front, 'blue'), in: sum(back, 'blue') },
+  red: { out: sum(front, 'red'), in: sum(back, 'red') },
+  silver: { out: sum(front, 'silver'), in: sum(back, 'silver') },
+  white: { out: sum(front, 'white'), in: sum(back, 'white') },
+  par: { out: sum(front, 'par'), in: sum(back, 'par') },
+};
+
+const teeRows = [
+  { key: 'gold', name: 'Gold', cssClass: 'row--gold' },
+  { key: 'blue', name: 'Blue', cssClass: 'row--blue' },
+  { key: 'red', name: 'Red', cssClass: 'row--red' },
+  { key: 'silver', name: 'Silver', cssClass: 'row--silver' },
+  { key: 'white', name: 'White', cssClass: 'row--white' },
+] as const;
+
+const ratings = [
+  { name: 'Gold', cssClass: 'row--gold', menRating: '36.6 / 35.2 / 71.8', womenRating: '39.9 / 38.2 / 78.1', menSlope: '129 / 123 / 126', womenSlope: '138 / 131 / 135', recommended: '250+ driving distance — low handicap players & long hitters' },
+  { name: 'Blue', cssClass: 'row--blue', menRating: '36.1 / 35.0 / 71.1', womenRating: '39.2 / 38.0 / 77.2', menSlope: '128 / 119 / 124', womenSlope: '135 / 130 / 133', recommended: '225–250 driving distance — single digit to mid-handicappers' },
+  { name: 'Red', cssClass: 'row--red', menRating: '34.5 / 33.7 / 68.2', womenRating: '39.9 / 38.2 / 78.1', menSlope: '123 / 121 / 122', womenSlope: '128 / 125 / 127', recommended: '200–225 driving distance — intermediate & improving players' },
+  { name: 'Silver', cssClass: 'row--silver', menRating: '33.1 / 32.6 / 65.7', womenRating: '39.9 / 38.2 / 78.1', menSlope: '117 / 115 / 116', womenSlope: '124 / 121 / 123', recommended: '175–200 driving distance — recreational & senior players' },
+  { name: 'White', cssClass: 'row--white', menRating: '32.9 / 32.0 / 64.9', womenRating: '35.7 / 34.3 / 70.1', menSlope: '116 / 112 / 114', womenSlope: '124 / 118 / 121', recommended: '<175 driving distance — new golfers, juniors, short hitters' },
+];
 ---
 
 <BaseLayout title="Golf Course" description="ALCC's 18-hole golf course in Mount Union, PA.">
@@ -23,16 +77,115 @@ import PageHero from '../components/PageHero.astro';
           envisioned the course on this site in the 1920s. Read more on the
           <a href="/history">club history</a> page.</p>
         </div>
-        <img class="course-photo" src="/images/golf-course/course-1.jpg" alt="Aerial view of the American Legion Country Club golf course" loading="lazy" />
+        <img class="course-photo" src="/images/golf-course/course-1.webp" alt="Aerial view of the American Legion Country Club golf course" loading="lazy" />
       </div>
+
+      <h2>Course Scorecard</h2>
+      <p>Yardage, par, and handicap for all five sets of tees, current as of
+      April 2025.</p>
+
+      <div class="scorecard-wrap">
+        <table class="scorecard">
+          <thead>
+            <tr class="row--head">
+              <th>Hole</th>
+              {front.map((h) => <th>{h.hole}</th>)}
+              <th>Out</th>
+            </tr>
+            <tr class="row--par-head">
+              <th>Par</th>
+              {front.map((h) => <th>{h.par}</th>)}
+              <th>{totals.par.out}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {teeRows.map((t) => (
+              <tr class={t.cssClass}>
+                <td>{t.name}</td>
+                {front.map((h) => <td>{h[t.key]}</td>)}
+                <td>{totals[t.key].out}</td>
+              </tr>
+            ))}
+            <tr class="row--hdcp">
+              <td>Hdcp M/F</td>
+              {front.map((h) => <td>{h.hdcpM}/{h.hdcpF}</td>)}
+              <td>&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="scorecard-wrap">
+        <table class="scorecard">
+          <thead>
+            <tr class="row--head">
+              <th>Hole</th>
+              {back.map((h) => <th>{h.hole}</th>)}
+              <th>In</th>
+              <th>Total</th>
+            </tr>
+            <tr class="row--par-head">
+              <th>Par</th>
+              {back.map((h) => <th>{h.par}</th>)}
+              <th>{totals.par.in}</th>
+              <th>{totals.par.out + totals.par.in}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {teeRows.map((t) => (
+              <tr class={t.cssClass}>
+                <td>{t.name}</td>
+                {back.map((h) => <td>{h[t.key]}</td>)}
+                <td>{totals[t.key].in}</td>
+                <td>{totals[t.key].out + totals[t.key].in}</td>
+              </tr>
+            ))}
+            <tr class="row--hdcp">
+              <td>Hdcp M/F</td>
+              {back.map((h) => <td>{h.hdcpM}/{h.hdcpF}</td>)}
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tee Ratings &amp; Recommendations</h3>
+      <div class="scorecard-wrap">
+        <table class="ratings-table">
+          <thead>
+            <tr class="row--head">
+              <th>Tee</th>
+              <th>Men's Rating<br /><span>Front / Back / All</span></th>
+              <th>Women's Rating<br /><span>Front / Back / All</span></th>
+              <th>Men's Slope<br /><span>Front / Back / All</span></th>
+              <th>Women's Slope<br /><span>Front / Back / All</span></th>
+              <th>Recommended For</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ratings.map((r) => (
+              <tr class={r.cssClass}>
+                <td>{r.name}</td>
+                <td>{r.menRating}</td>
+                <td>{r.womenRating}</td>
+                <td>{r.menSlope}</td>
+                <td>{r.womenSlope}</td>
+                <td class="recommended">{r.recommended}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="caption">Ratings and slope as of 04/01/2025.</p>
 
       <h2>Tee Times & Pace of Play</h2>
       <p>Members and guests can book tee times through the pro shop. Call
       ahead during peak weekend hours to guarantee your preferred time.</p>
 
       <div class="gallery grid grid--2">
-        <img src="/images/golf-course/course-2.jpg" alt="Golf course fairway at ALCC" loading="lazy" />
-        <img src="/images/golf-course/course-drawing.png" alt="Illustrated drawing of the ALCC course" loading="lazy" />
+        <img src="/images/golf-course/course-2.webp" alt="Golf course fairway at ALCC" loading="lazy" />
+        <img src="/images/golf-course/course-drawing.webp" alt="Illustrated drawing of the ALCC course" loading="lazy" />
       </div>
 
       <div class="cta-row">
@@ -50,4 +203,67 @@ import PageHero from '../components/PageHero.astro';
   .gallery img { width: 100%; border-radius: var(--radius); object-fit: cover; }
   .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
   @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+
+  .scorecard-wrap {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .scorecard,
+  .ratings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 640px;
+  }
+  .scorecard th,
+  .scorecard td,
+  .ratings-table th,
+  .ratings-table td {
+    padding: 0.5rem 0.6rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .scorecard td:first-child,
+  .scorecard th:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    font-weight: 700;
+    min-width: 110px;
+  }
+  .ratings-table {
+    min-width: 900px;
+  }
+  .ratings-table td:first-child,
+  .ratings-table th:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    font-weight: 700;
+    min-width: 90px;
+  }
+  .ratings-table th span { font-weight: 400; font-size: 0.7rem; opacity: 0.85; }
+  .ratings-table td.recommended { white-space: normal; text-align: left; min-width: 240px; }
+
+  .scorecard tr.row--head, .scorecard tr.row--head td, .scorecard tr.row--head th,
+  .ratings-table tr.row--head, .ratings-table tr.row--head td, .ratings-table tr.row--head th {
+    background: var(--color-blue-dark); color: var(--color-white);
+  }
+  .scorecard tr.row--par-head, .scorecard tr.row--par-head td, .scorecard tr.row--par-head th {
+    background: var(--color-ink); color: var(--color-white); font-size: 0.8rem;
+  }
+
+  .scorecard tr.row--gold td, .ratings-table tr.row--gold td { background: #C8961E; color: var(--color-blue-dark); }
+  .scorecard tr.row--blue td, .ratings-table tr.row--blue td { background: var(--color-blue); color: var(--color-white); }
+  .scorecard tr.row--red td, .ratings-table tr.row--red td { background: var(--color-red); color: var(--color-white); }
+  .scorecard tr.row--silver td, .ratings-table tr.row--silver td { background: #A7ADB4; color: var(--color-blue-dark); }
+  .scorecard tr.row--white td, .ratings-table tr.row--white td {
+    background: var(--color-white); color: var(--color-blue);
+    border-top: 1px solid var(--color-gray-light); border-bottom: 1px solid var(--color-gray-light);
+  }
+  .scorecard tr.row--hdcp td { background: var(--color-off-white); color: var(--color-gray); font-size: 0.75rem; }
+
+  .caption { text-align: center; color: var(--color-gray); font-size: 0.85rem; margin-top: -0.5rem; margin-bottom: 2rem; }
 </style>

@@ -7,8 +7,8 @@ order: 7
 ## Route 22 Cup — HCC vs. ALCC
 
 <div style="display:flex;gap:1rem;align-items:center;margin-bottom:1rem;">
-<img src="/images/route-22-cup/hcc-logo.png" alt="Huntingdon Country Club logo" style="max-height:90px;width:auto;" />
-<img src="/images/route-22-cup/hcc-bearcat.png" alt="Huntingdon Bearcats mascot" style="max-height:90px;width:auto;" />
+<img src="/images/route-22-cup/hcc-logo.webp" alt="Huntingdon Country Club logo" style="max-height:90px;width:auto;" />
+<img src="/images/route-22-cup/hcc-bearcat.webp" alt="Huntingdon Bearcats mascot" style="max-height:90px;width:auto;" />
 </div>
 
 The Route 22 Cup began as an idea between two friends, Matt Suchan and Joe

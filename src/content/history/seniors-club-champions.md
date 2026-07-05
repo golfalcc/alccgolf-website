@@ -3,6 +3,11 @@ title: "Seniors Club Champions"
 summary: "Seniors Club Champions at American Legion Country Club, 2012 to present."
 order: 3
 ---
+<div class="defending-champion">
+  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__name">Daniel Atherton (2025)</span>
+</div>
+
 
 ## American Legion Country Club (2012 – Present)
 

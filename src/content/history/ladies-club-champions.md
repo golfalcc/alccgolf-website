@@ -3,6 +3,11 @@ title: "Ladies' Club Champions"
 summary: "Ladies Club Championships at American Legion Country Club, 1942 to present."
 order: 1
 ---
+<div class="defending-champion">
+  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__name">Kathie Ramsey (2025)</span>
+</div>
+
 
 ## Ladies Club Championships (1942 – Present)
 
@@ -42,7 +47,7 @@ order: 1
 | 1973 | Elinor Wible | 2016 | Donna Morgan |
 | 1974 | Elinor Wible | 2017 | Wava Baer |
 | 1975 | Elinor Wible | 2018 | Wava Baer |
-| 1976 | Elinor Wible | 2019 | Wava Baer |
+| 1976 | Elinor Wible — 251 for three 18-hole rounds (79-89-83) | 2019 | Wava Baer |
 | 1977 | Elinor Wible | 2020 | Donna Morgan |
 | 1978 | Elinor Wible | 2021 | Kathie Ramsey |
 | 1979 | Elinor Wible | 2022 | Wava Baer |
@@ -66,8 +71,8 @@ order: 1
 | Kathie Ramsey | 2 |
 | Cindy Vaughn | 1 |
 
-![Huntingdon Daily News, December 11, 1986, on Elinor Wible's Sports Illustrated mention](/images/archive/1986-wible-sports-illustrated.jpg)
-*Elinor Wible's dominance even earned a mention in Sports Illustrated — Huntingdon Daily News, Dec. 11, 1986.*
+Elinor Wible's dominance was even noted in Sports Illustrated, per a
+December 1986 Huntingdon Daily News article.
 
 _Source: American Legion Country Club club records. Edit
 `src/content/history/ladies-club-champions.md` to add each new champion._

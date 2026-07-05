@@ -2,7 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 
-interface Champion { year: string; name: string; partner?: string; notes?: string }
+interface Champion { year: string; name: string; partner?: string; notes?: string; division?: string }
 interface Props {
   title: string;
   dates?: string;
@@ -11,8 +11,30 @@ interface Props {
   summary: string;
   defendingChampion?: string;
   champions?: Champion[];
+  image?: string;
 }
-const { title, dates, format, entryFee, summary, defendingChampion, champions = [] } = Astro.props;
+const { title, dates, format, entryFee, summary, defendingChampion, champions = [], image } = Astro.props;
+
+// If every champion entry has a division (e.g. "Scratch" / "Net"), render
+// a two-column-by-year table instead of one flat list.
+const hasDivisions = champions.length > 0 && champions.every((c) => c.division);
+
+function formatEntry(c?: Champion) {
+  if (!c) return null;
+  return { name: `${c.name}${c.partner ? ` / ${c.partner}` : ''}`, notes: c.notes };
+}
+
+let years: string[] = [];
+let byYear: Record<string, Record<string, Champion>> = {};
+let divisions: string[] = [];
+if (hasDivisions) {
+  divisions = [...new Set(champions.map((c) => c.division as string))];
+  for (const c of champions) {
+    byYear[c.year] ??= {};
+    byYear[c.year][c.division as string] = c;
+  }
+  years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+}
 ---
 
 <BaseLayout title={title} description={summary}>
@@ -24,6 +46,9 @@ const { title, dates, format, entryFee, summary, defendingChampion, champions = 
         <slot />
       </div>
       <aside class="tournament-layout__side">
+        {image && (
+          <img class="tournament-logo" src={image} alt={`${title} logo`} loading="lazy" />
+        )}
         <div class="info-card">
           <h3>Event Details</h3>
           <dl>
@@ -37,7 +62,7 @@ const { title, dates, format, entryFee, summary, defendingChampion, champions = 
       </aside>
     </div>
 
-    {champions.length > 0 && (
+    {champions.length > 0 && !hasDivisions && (
       <div class="container">
         <h2>Past Champions</h2>
         <table>
@@ -45,6 +70,42 @@ const { title, dates, format, entryFee, summary, defendingChampion, champions = 
           <tbody>
             {champions.map((c) => (
               <tr><td>{c.year}</td><td>{c.name}{c.partner ? ` / ${c.partner}` : ''}</td><td>{c.notes ?? ''}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {hasDivisions && (
+      <div class="container">
+        <h2>Past Champions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              {divisions.map((d) => <th>{d} Champions</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {years.map((year) => (
+              <tr>
+                <td>{year}</td>
+                {divisions.map((d) => {
+                  const entry = formatEntry(byYear[year][d]);
+                  return (
+                    <td>
+                      {entry ? (
+                        <>
+                          {entry.name}
+                          {entry.notes && <span class="table-note">{entry.notes}</span>}
+                        </>
+                      ) : (
+                        '—'
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
             ))}
           </tbody>
         </table>
@@ -60,6 +121,13 @@ const { title, dates, format, entryFee, summary, defendingChampion, champions = 
     gap: 2.5rem;
     align-items: start;
     margin-bottom: 2rem;
+  }
+  .tournament-logo {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.25rem;
   }
   .info-card {
     background: var(--color-off-white);
@@ -78,6 +146,13 @@ const { title, dates, format, entryFee, summary, defendingChampion, champions = 
     margin-top: 0.75rem;
   }
   .info-card dd { margin: 0.15rem 0 0; }
+  .table-note {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    font-weight: normal;
+    margin-top: 0.2rem;
+  }
   @media (max-width: 800px) {
     .tournament-layout { grid-template-columns: 1fr; }
   }

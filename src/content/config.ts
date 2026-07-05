@@ -10,6 +10,7 @@ const tournaments = defineCollection({
     entryFee: z.string().optional(),
     summary: z.string(),
     defendingChampion: z.string().optional(),
+    image: z.string().optional(),
     champions: z
       .array(
         z.object({
@@ -17,6 +18,7 @@ const tournaments = defineCollection({
           name: z.string(),
           partner: z.string().optional(),
           notes: z.string().optional(),
+          division: z.string().optional(),
         })
       )
       .optional(),
@@ -33,4 +35,16 @@ const history = defineCollection({
   }),
 });
 
-export const collections = { tournaments, history };
+const people = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    dates: z.string().optional(),
+    photo: z.string(),
+    summary: z.string(),
+    order: z.number().default(0),
+  }),
+});
+
+export const collections = { tournaments, history, people };

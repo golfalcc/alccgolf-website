@@ -11,6 +11,7 @@ const slugMap: Record<string,string> = {
   "mens-club-champions": "Men's Club Champions",
   "seniors-club-champions": "Seniors Club Champions",
   "alcc-aces": "ALCC Aces",
+  "course-record": "Course Record",
   "twilight-league": "Twilight League",
   "prominent-individuals": "Prominent Individuals in ALCC History",
   "route-22-cup": "Route 22 Cup",
@@ -52,44 +53,17 @@ const slugMap: Record<string,string> = {
 
       <div class="gallery grid grid--3">
         <figure>
-          <img src="/images/history/jvcc-seal.jpg" alt="Juniata Valley Colony Club seal and property map" loading="lazy" />
+          <img src="/images/history/jvcc-seal.webp" alt="Juniata Valley Colony Club seal and property map" loading="lazy" />
           <figcaption>The original Juniata Valley Colony Club seal and property map.</figcaption>
         </figure>
         <figure>
-          <img src="/images/history/clubhouse-construction.jpg" alt="Clubhouse under construction, 1927-1928" loading="lazy" />
+          <img src="/images/history/clubhouse-construction.webp" alt="Clubhouse under construction, 1927-1928" loading="lazy" />
           <figcaption>The clubhouse under construction, 1927–1928.</figcaption>
         </figure>
         <figure>
-          <img src="/images/history/1936-flood.jpg" alt="The 1936 St. Patrick's Day Flood" loading="lazy" />
+          <img src="/images/history/1936-flood.webp" alt="The 1936 St. Patrick's Day Flood" loading="lazy" />
           <figcaption>Damage from the 1936 St. Patrick's Day Flood.</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <span class="eyebrow">From the Archives</span>
-      <h2>Newspaper Coverage Through the Years</h2>
-      <p>Scanned clippings from the club's archive — click any clipping to
-      open the full-resolution scan.</p>
-      <div class="archive-grid">
-        <a href="/images/archive/1924-founding.jpg" target="_blank" rel="noopener">
-          <img src="/images/archive/1924-founding.jpg" alt="Mount Union Times, August 29, 1924 — coverage of the country club's founding" loading="lazy" />
-          <span>Mount Union Times, Aug. 29, 1924 — "Mount Union to Have a Country Club"</span>
-        </a>
-        <a href="/images/archive/1928-season-opening.jpg" target="_blank" rel="noopener">
-          <img src="/images/archive/1928-season-opening.jpg" alt="Altoona Tribune, May 9, 1928 — JVCC opening for the season" loading="lazy" />
-          <span>Altoona Tribune, May 9, 1928 — JVCC opens for the season</span>
-        </a>
-        <a href="/images/archive/1938-sale-to-american-legion.jpg" target="_blank" rel="noopener">
-          <img src="/images/archive/1938-sale-to-american-legion.jpg" alt="Mount Union Times, April 7, 1938 — club sale to The American Legion" loading="lazy" />
-          <span>Mount Union Times, Apr. 7, 1938 — club sold to The American Legion</span>
-        </a>
-        <a href="/images/archive/1951-alcc-plaque.jpg" target="_blank" rel="noopener">
-          <img src="/images/archive/1951-alcc-plaque.jpg" alt="Huntingdon Daily News, April 13, 1951 — ALCC dedication plaque" loading="lazy" />
-          <span>Huntingdon Daily News, Apr. 13, 1951 — ALCC dedication plaque</span>
-        </a>
       </div>
     </div>
   </section>
@@ -117,26 +91,4 @@ const slugMap: Record<string,string> = {
   .gallery figure { margin: 0; }
   .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
   .gallery figcaption { font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem; }
-  .archive-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  .archive-grid a { color: inherit; }
-  .archive-grid a:hover { text-decoration: none; }
-  .archive-grid img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-gray-light);
-  }
-  .archive-grid span {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--color-gray);
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
 </style>

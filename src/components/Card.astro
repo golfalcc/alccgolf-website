@@ -5,13 +5,17 @@ interface Props {
   description?: string;
   imageLabel?: string;
   image?: string;
+  imageFit?: 'cover' | 'contain';
+  imageScale?: number;
 }
-const { title, href, description, imageLabel, image } = Astro.props;
+const { title, href, description, imageLabel, image, imageFit = 'cover', imageScale = 0.85 } = Astro.props;
 ---
 
 <a class="card card-link" href={href}>
   {image
-    ? <img class="card__photo" src={image} alt={title} loading="lazy" />
+    ? imageFit === 'contain'
+      ? <div class="card__photo card__photo--contain"><img src={image} alt={title} loading="lazy" style={`max-width:${imageScale * 100}%;max-height:${imageScale * 100}%;`} /></div>
+      : <img class="card__photo" src={image} alt={title} loading="lazy" />
     : <div class="card__image">{imageLabel ?? title}</div>
   }
   <div class="card__body">
@@ -28,6 +32,17 @@ const { title, href, description, imageLabel, image } = Astro.props;
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+  }
+  .card__photo--contain {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    aspect-ratio: 16 / 10;
+  }
+  .card__photo--contain img {
+    object-fit: contain;
   }
   .card__cta {
     color: var(--color-red);

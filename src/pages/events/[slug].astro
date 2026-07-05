@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, dates, format, entryFee, summary, champions, defendingChampion } = entry.data;
+const { title, dates, format, entryFee, summary, champions, defendingChampion, image } = entry.data;
 ---
 
 <TournamentLayout
@@ -23,6 +23,7 @@ const { title, dates, format, entryFee, summary, champions, defendingChampion } 
   summary={summary}
   champions={champions}
   defendingChampion={defendingChampion}
+  image={image}
 >
   <Content />
 </TournamentLayout>

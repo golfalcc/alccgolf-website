@@ -8,13 +8,22 @@ const tournaments = (await getCollection('tournaments')).sort(
   (a, b) => a.data.order - b.data.order
 );
 
+// Add a `facebook` URL to any entry once you have the event's Facebook
+// link (Facebook Page > Events tab > click the event > copy the URL).
+// Entries without one just show the cover image with no link.
 const outings2026 = [
-  { name: "Elinor Wible Memorial", date: "June 6" },
-  { name: "Huntingdon Regional Ballet", date: "June 19" },
-  { name: "June Invitational", date: "June 26–28" },
-  { name: "Mount Union Wrestling Club", date: "July 11" },
-  { name: "Fort Shirley Lions", date: "August 15" },
-  { name: "Huntingdon Police Officers Association", date: "August 21" },
+  { name: "ALCC Stag", date: "April 3", facebook: "", image: "/images/outings/stag.webp" },
+  { name: "FBLA (Future Business Leaders of America) — Drive for Success", date: "April 18", facebook: "", image: "/images/outings/fbla.webp" },
+  { name: "Mark \"Ironman\" Kumpf Memorial Golf Tournament", date: "May 2", facebook: "", image: "/images/outings/kumpf.webp" },
+  { name: "Swing Fore SKILLZ", date: "May 8", facebook: "", image: "/images/outings/skillz.webp" },
+  { name: "Saltillo Lions", date: "May 16", facebook: "", image: "/images/outings/saltillo.webp" },
+  { name: "Mount Union Youth Baseball", date: "May 17", facebook: "", image: "/images/outings/mu-baseball.webp" },
+  { name: "Elinor Wible Memorial", date: "June 6", facebook: "", image: "/images/outings/wible.webp" },
+  { name: "Huntingdon Regional Ballet", date: "June 19", facebook: "", image: "/images/outings/hrb.webp" },
+  { name: "Mount Union Wrestling Club", date: "July 11", facebook: "", image: "/images/outings/mu-wrestling.webp" },
+  { name: "CHAMP Golf Outing — Mount Union Area School District", date: "July 24", facebook: "", image: "/images/outings/champ-mu.webp" },
+  { name: "CHAMP Golf Outing — Southern Huntingdon", date: "August 14", facebook: "", image: "/images/outings/champ-sh.webp" },
+  { name: "Huntingdon Police Officers Association", date: "August 21", facebook: "", image: "/images/outings/huntingdon-police.webp" },
 ];
 ---
 
@@ -28,14 +37,20 @@ const outings2026 = [
       <a class="btn btn--navy" href="/calendar">View Full Calendar</a>
 
       <h2 style="margin-top:2.5rem;">2026 Group Outings &amp; Charity Events</h2>
-      <table>
-        <thead><tr><th>Event</th><th>Date</th></tr></thead>
-        <tbody>
-          {outings2026.map((e) => (
-            <tr><td>{e.name}</td><td>{e.date}</td></tr>
-          ))}
-        </tbody>
-      </table>
+      <div class="outing-grid">
+        {outings2026.map((e) => (
+          <div class="outing-card">
+            <img src={e.image} alt={e.name} loading="lazy" />
+            <div class="outing-card__body">
+              <h3>{e.name}</h3>
+              <p class="outing-card__date">{e.date}</p>
+              {e.facebook && (
+                <a href={e.facebook} target="_blank" rel="noopener">Facebook Event &rarr;</a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
       <p><em>Interested in booking ALCC as a venue for your own outing?
       Contact Stefan at (814) 542-4343.</em></p>
 
@@ -52,3 +67,45 @@ const outings2026 = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .outing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .outing-card {
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+  }
+  .outing-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+  .outing-card__body {
+    padding: 0.85rem 1rem 1.1rem;
+  }
+  .outing-card__body h3 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem;
+  }
+  .outing-card__date {
+    color: var(--color-gray);
+    font-size: 0.85rem;
+    margin: 0 0 0.4rem;
+  }
+  @media (max-width: 900px) {
+    .outing-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .outing-grid { grid-template-columns: 1fr; }
+  }
+</style>

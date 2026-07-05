@@ -3,6 +3,11 @@ title: "Men's Club Champions"
 summary: "Men's Club Champions from the Juniata Valley Colony Club era through today's American Legion Country Club."
 order: 2
 ---
+<div class="defending-champion">
+  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__name">Matt Souders (2025)</span>
+</div>
+
 
 ## Juniata Valley Colony Club (1928 – 1937)
 
@@ -10,10 +15,10 @@ order: 2
 | ---- | -------- |
 | 1928 | Francis Butler |
 | 1929 | Carl "Jack" Kirk |
-| 1930 | Woods Robinson |
+| 1930 | Woods Robinson — age 15, won 2-and-1 in the final over the previous year's champion |
 | 1931 | Charles Huston Jr. |
 | 1932 | Dick Fetterolf |
-| 1933 | Woods Robinson |
+| 1933 | Woods Robinson — his 2nd title, beat defending champ Dick Fetterolf in the 36-hole final |
 | 1934 | Woods Robinson |
 | 1935 | Woods Robinson |
 | 1936 | Melvin Smith |
@@ -32,12 +37,12 @@ order: 2
 | 1944 | World War II — No Champion | 1989 | Dave Hummel |
 | 1945 | Alton "Bud" Fields | 1990 | Dave Hummel |
 | 1946 | Carl "Jack" Kirk | 1991 | Charles Fields |
-| 1947 | Alton "Bud" Fields | 1992 | Mike Yelovich |
+| 1947 | Alton "Bud" Fields | 1992 | Mike Yelovich — his 9th title, beat Monte Sheetz (Lewistown) 5 and 4 |
 | 1948 | John Burych | 1993 | Dave Hummel |
-| 1949 | Alton "Bud" Fields | 1994 | Dave Hummel |
-| 1950 | Frank Stasenko | 1995 | Don Dimoff Sr. |
+| 1949 | Alton "Bud" Fields — beat Harry Cholewinski 8 and 7 in the 36-hole final | 1994 | Dave Hummel |
+| 1950 | Frank Stasenko | 1995 | Don Dimoff Sr. — his 3rd title across 27 years (1969, 1986, 1995), beat Daniel Atherton 2 and 1 |
 | 1951 | Alton "Bud" Fields | 1996 | Daniel Atherton |
-| 1952 | Harry Cholewinski | 1997 | F. Stanley Westbrook |
+| 1952 | Harry Cholewinski | 1997 | F. Stanley Westbrook — his 1st title at age 50, beat 3-time champ Don Dimoff Sr. 4 and 2 |
 | 1953 | Alton "Bud" Fields | 1998 | Daniel Atherton |
 | 1954 | Alton "Bud" Fields | 1999 | Daniel Atherton |
 | 1955 | Alton "Bud" Fields | 2000 | Scott Atherton |
@@ -46,24 +51,24 @@ order: 2
 | 1958 | Alton "Bud" Fields | 2003 | Daniel Atherton |
 | 1959 | Alton "Bud" Fields | 2004 | Larry Suter Jr. |
 | 1960 | Steve Garlock | 2005 | Larry Suter Jr. |
-| 1961 | Art Schutawie | 2006 | Gary Anderson |
+| 1961 | Art Schutawie | 2006 | Gary Anderson — edged Fred Lear 1-up with a birdie on 17 |
 | 1962 | Andrew Kurey | 2007 | Larry Suter Jr. |
 | 1963 | Alton "Bud" Fields | 2008 | Daniel Atherton |
-| 1964 | Alton "Bud" Fields | 2009 | Matthew Baer |
-| 1965 | Alton "Bud" Fields | 2010 | Larry Suter Jr. |
+| 1964 | Alton "Bud" Fields | 2009 | Matthew Baer — his 1st title, won in a 19-hole sudden-death playoff |
+| 1965 | Alton "Bud" Fields — his 12th title (3rd straight), beat Don Dimoff 5 and 4; 96 golfers entered across six flights | 2010 | Larry Suter Jr. |
 | 1966 | Mike Yelovich | 2011 | Dave Hummel |
 | 1967 | Mike Yelovich | 2012 | Larry Suter Jr. |
-| 1968 | Bill Kelley | 2013 | Larry Suter Jr. |
+| 1968 | Bill Kelley | 2013 | Larry Suter Jr. — his 6th title, rallied from 2 down to beat 2009 champ Matt Baer 1-up |
 | 1969 | Don Dimoff Sr. | 2014 | Matthew Baer |
 | 1970 | Alton "Bud" Fields | 2015 | Matthew Baer |
-| 1971 | Alton "Bud" Fields | 2016 | Matthew Baer |
+| 1971 | Alton "Bud" Fields | 2016 | Matthew Baer — his 4th title (3rd in a row), won on hole 19 in sudden death |
 | 1972 | Mike Yelovich | 2017 | Trey Heffelfinger |
 | 1973 | Mike Yelovich | 2018 | Trey Heffelfinger |
 | 1974 | Butch Yelovich | 2019 | Trey Heffelfinger |
 | 1975 | Butch Yelovich | 2020 | Larry Suter Jr. |
 | 1976 | Mike Yelovich | 2021 | Larry Suter Jr. |
-| 1977 | Mike Yelovich | 2022 | Trey Heffelfinger |
-| 1978 | Mike Yelovich | 2023 | Bobby Mort |
+| 1977 | Mike Yelovich — his 6th title in 12 years, beat Don Dimoff 1-up; 107 entries | 2022 | Trey Heffelfinger |
+| 1978 | Mike Yelovich — his 7th title (48th tournament since 1927), beat Gary Calupca 4 and 2 | 2023 | Bobby Mort |
 | 1979 | Charles Fields | 2024 | Trey Heffelfinger |
 | 1980 | Don Dimoff Jr. | 2025 | Matt Souders |
 | 1981 | Mike Yelovich |  |  |
@@ -95,9 +100,6 @@ order: 2
 | | | Frank Stasenko | 1 |
 | | | Joe Stevens | 1 |
 | | | Michael Walker | 1 |
-
-![Mount Union Times, September 26, 1930, on club champion Woods Robinson](/images/archive/1930-champion-robinson.jpg)
-*Woods Robinson's title defense covered in the Mount Union Times, Sep. 26, 1930.*
 
 _Source: American Legion Country Club club records. Edit
 `src/content/history/mens-club-champions.md` to add each new champion._

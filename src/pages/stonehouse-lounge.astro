@@ -8,7 +8,7 @@ import PageHero from '../components/PageHero.astro';
 
   <section class="section">
     <div class="container">
-      <img class="lounge-logo" src="/images/lounge/stonehouse-logo.png" alt="StoneHouse Lounge logo" loading="lazy" />
+      <img class="lounge-logo" src="/images/lounge/stonehouse-logo.webp" alt="StoneHouse Lounge logo" loading="lazy" />
       <h2>StoneHouse Lounge &amp; Bar</h2>
       <p>Are you searching for the perfect venue for a wedding reception,
       special celebration, or golf outing with an exceptional meal
@@ -28,18 +28,31 @@ import PageHero from '../components/PageHero.astro';
       <p>For availability, pricing, and event details, please contact the
       golf shop.</p>
 
-      <div class="gallery grid grid--2">
-        <img src="/images/lounge/lounge-1.jpg" alt="Interior of the StoneHouse Lounge" loading="lazy" />
-        <img src="/images/lounge/lounge-2.jpg" alt="StoneHouse Lounge seating area" loading="lazy" />
-      </div>
-
       <a class="btn btn--red" href="/contact">Contact the Golf Shop</a>
+    </div>
+  </section>
+
+  <section class="section section--off-white">
+    <div class="container">
+      <span class="eyebrow">Food &amp; Drink</span>
+      <h2>Menu</h2>
+      <p>Sandwiches, salads, wings, and fryer favorites — served daily.</p>
+      <a class="btn btn--navy" href="/downloads/stonehouse-lounge-menu.pdf" target="_blank" rel="noopener">
+        View the StoneHouse Lounge Menu (PDF)
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">This Week</span>
+      <h2>Weekly Specials</h2>
+      <img class="specials-image" src="/images/lounge/weekly-specials.webp" alt="StoneHouse Lounge weekly specials" loading="lazy" />
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .lounge-logo { max-width: 220px; margin-bottom: 1.5rem; }
-  .gallery { margin: 2rem 0; }
-  .gallery img { width: 100%; border-radius: var(--radius); object-fit: cover; }
+  .specials-image { max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); margin-top: 1rem; }
 </style>
