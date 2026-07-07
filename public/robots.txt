@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alccgolf.com/sitemap-index.xml
+Sitemap: https://alccgolf.com/sitemap.xml
