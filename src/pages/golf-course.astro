@@ -62,16 +62,24 @@ const ratings = [
 
   <section class="section">
     <div class="container">
+      <aside class="course-notice" aria-labelledby="course-notice-heading">
+        <span class="course-notice__label">Course Condition Notice</span>
+        <h2 id="course-notice-heading">Temporary Daily Rates Now in Effect</h2>
+        <p>A chemical reaction caused several greens to fall into disrepair. While recovery work continues, ALCC has reduced its daily golf fees until further notice.</p>
+        <p><strong>Nonmembers:</strong> $10 for 9 holes with cart or $20 for 18 holes with cart. <strong>Members:</strong> $5 for 9 holes or $10 for 18 holes.</p>
+        <a class="btn btn--red" href="/rates">View Temporary Rates</a>
+      </aside>
+
       <div class="two-col">
         <div>
           <h2>Course Overview</h2>
           <p>American Legion Country Club's course winds through the hills of
           Mount Union, offering a mix of challenging par 4s, scenic elevation
-          changes, and well-maintained greens. Whether you're a low-handicap
+          changes and a layout that rewards thoughtful play. Whether you're a low-handicap
           regular or a weekend golfer, the layout rewards smart course
           management.</p>
-          <p>The grounds crew keeps the course in tournament-ready condition
-          throughout the season under the direction of our superintendent.</p>
+          <p>Our grounds crew is actively working to restore the affected greens
+          under the direction of our superintendent.</p>
           <p>The original 18-hole layout traces back to golf course architect
           <a href="/history/prominent-individuals">Tom Bendelow</a>, who
           envisioned the course on this site in the 1920s. Read more on the
@@ -197,6 +205,24 @@ const ratings = [
 </BaseLayout>
 
 <style>
+  .course-notice {
+    background: var(--color-off-white);
+    border-left: 8px solid var(--color-red);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+  }
+  .course-notice__label {
+    color: var(--color-red);
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
   .two-col { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem; }
   .course-photo { width: 100%; height: 100%; min-height: 220px; object-fit: cover; border-radius: var(--radius); }
   .gallery { margin: 2rem 0; }
