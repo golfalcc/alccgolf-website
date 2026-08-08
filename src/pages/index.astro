@@ -4,6 +4,8 @@ import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 
 const announcements = [
+  { text: "Temporary daily golf rates now in effect due to current green conditions", href: "/rates" },
+  { text: "Golf Committee rifle raffle — only 50 chances available", href: "#rifle-raffle" },
   { text: "Membership applications available for the 2026 season", href: "/memberships" },
   { text: "2026 tournament schedule is available through our Events portal", href: "/events" },
   { text: "Central Counties events for 2026 are scheduled — see the CCGA page", href: "/events/central-counties" },
@@ -39,6 +41,36 @@ const quickLinks = [
       </ul>
     </div>
   </div>
+
+  <section id="rifle-raffle" class="section section--off-white raffle">
+    <div class="container raffle__inner">
+      <div class="raffle__content">
+        <span class="eyebrow">Golf Committee Fundraiser</span>
+        <h2>Weatherby Vanguard 300 Rifle Raffle</h2>
+        <p class="raffle__lead">Take a chance to win a legendary hunting rifle while supporting the ALCC Golf Committee.</p>
+        <dl class="raffle__details">
+          <div>
+            <dt>Chance Price</dt>
+            <dd>$20 each</dd>
+          </div>
+          <div>
+            <dt>Total Chances</dt>
+            <dd>Only 50</dd>
+          </div>
+          <div>
+            <dt>Drawing</dt>
+            <dd>After all chances are sold</dd>
+          </div>
+        </dl>
+        <p>Purchase a chance with cash at the Pro Shop or from any Golf Committee member, through Venmo at <strong>@ALCCMU</strong>, or through PayPal at <strong>golf.alcc@gmail.com</strong>.</p>
+        <p class="raffle__note">The winner will be selected live on the ALCC Facebook page and contacted directly. You do not need to be present to win.</p>
+        <a class="btn btn--red" href="/downloads/golf-committee-rifle-raffle.pdf" target="_blank" rel="noopener">View the Full Raffle Flyer</a>
+      </div>
+      <a class="raffle__art" href="/downloads/golf-committee-rifle-raffle.pdf" target="_blank" rel="noopener" aria-label="Open the full Weatherby Vanguard 300 rifle raffle flyer">
+        <img src="/images/home/weatherby-rifle-raffle.jpg" alt="Weatherby Vanguard 300 rifle raffle: $20 per chance, 50 chances total" loading="lazy" />
+      </a>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
@@ -110,6 +142,53 @@ const quickLinks = [
   .weather-bar__widget { width: 100%; }
   .weather-bar__widget :global(.weatherwidget-io) { width: 100% !important; display: block !important; }
   .eyebrow--light { color: #FFD966; }
+  .raffle { border-bottom: 1px solid var(--color-gray-light); }
+  .raffle__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .raffle__lead { font-size: 1.12rem; }
+  .raffle__details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .raffle__details div {
+    background: var(--color-white);
+    border-top: 4px solid var(--color-blue-dark);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+  }
+  .raffle__details dt {
+    color: var(--color-gray);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .raffle__details dd {
+    color: var(--color-blue-dark);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.25rem 0 0;
+    text-transform: uppercase;
+  }
+  .raffle__note { color: var(--color-gray); font-size: 0.9rem; }
+  .raffle__art {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    display: block;
+    overflow: hidden;
+  }
+  .raffle__art:hover { transform: translateY(-2px); }
+  .raffle__art img { margin: 0 !important; width: 100%; }
   .leadership {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -120,6 +199,8 @@ const quickLinks = [
   .leadership__list li { margin-bottom: 0.5rem; }
   .leadership__cta { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
   @media (max-width: 800px) {
+    .raffle__inner { grid-template-columns: 1fr; }
+    .raffle__details { grid-template-columns: 1fr; }
     .leadership { grid-template-columns: 1fr; }
   }
 </style>
