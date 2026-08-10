@@ -36,7 +36,7 @@ principle that would extend to the very fabric of the Juniata Valley
 Colony Club.
 
 With his wife and three daughters, Davis established two homes in the
-vicinity — one in Kistler and the other, known as "Blue Rock," where
+vicinity — one in Kistler and the other, known as "Blue Springs," where
 Beacon Lodge now stands. These homes were witness to Davis's endeavors
 during the economic boom of the brickyards, a period that laid the
 foundation for his ambitious project.
