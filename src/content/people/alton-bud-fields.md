@@ -30,6 +30,11 @@ He lowered the amateur course record again in July 1950, shooting a
 five-under-par 70 during a putting tournament. The professional record
 at the time was reported as 68.
 
+<figure class="person-document">
+  <img src="/images/people/bud-fields-1950-course-record-article.png" alt="Newspaper article reporting Bud Fields's five-under-par course-record round in 1950" loading="lazy">
+  <figcaption><em>The Daily News</em>, July 11, 1950, reporting Fields's five-under-par 70 and new amateur course record.</figcaption>
+</figure>
+
 ## The First Mount Union Open
 
 Fields won the Mount Union Open on July 6, 1952, with a three-under-par
@@ -41,6 +46,17 @@ The newspaper's account emphasized that Fields's short game made the
 difference. His victory earned the tournament's top amateur merchandise
 prize and established him as the first winner of an event that became a
 major part of Mount Union's golf calendar.
+
+<div class="person-photo-grid">
+  <figure>
+    <img src="/images/people/bud-fields-1952-mount-union-open-article.png" alt="Newspaper article reporting Bud Fields's victory in the 1952 Mount Union Open" loading="lazy">
+    <figcaption><em>The Daily News</em>, July 7, 1952, reporting Fields's victory in the Mount Union Open.</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/people/bud-fields-1952-mount-union-open-photo.png" alt="Bud Fields with Lew Worsham, Harold Dore, and Leo Anderson during the 1952 Mount Union Open" loading="lazy">
+    <figcaption>Bud Fields with 1947 U.S. Open champion Lew Worsham and professionals Harold Dore and Leo Anderson during the 1952 Mount Union Open. <em>Daily News</em> photograph.</figcaption>
+  </figure>
+</div>
 
 ## Club Championships
 
@@ -77,6 +93,17 @@ in 2026, Charles identified one image as Bud teeing off from the old
 seventeenth tee. He also confirmed that another photograph showed Bud
 with Charles's mother and Nan Anderson. Those identifications preserve
 valuable context that the photographs themselves did not record.
+
+<div class="person-photo-grid">
+  <figure>
+    <img src="/images/people/bud-fields-old-seventeenth-tee.jpg" alt="Bud Fields teeing off from the old seventeenth tee at the Mount Union course" loading="lazy">
+    <figcaption>Bud Fields teeing off from the old seventeenth tee, identified by his son Charles Fields on April 13, 2026.</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/people/bud-fields-with-family.jpg" alt="Bud Fields seated between Charles Fields's mother and Nan Anderson at the Mount Union course" loading="lazy">
+    <figcaption>Bud Fields (center) with Charles Fields's mother and Nan Anderson at the Mount Union course, identified by Charles Fields on April 13, 2026.</figcaption>
+  </figure>
+</div>
 
 ## Legacy
 

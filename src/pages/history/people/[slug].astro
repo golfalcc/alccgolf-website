@@ -59,6 +59,41 @@ const { name, role, dates, photo, summary } = entry.data;
   .person-hero h1 { margin: 0.15rem 0; color: var(--color-white); }
   .person-hero__dates { margin: 0; color: var(--color-gray-light); }
   .person-content { max-width: 780px; }
+  .person-content :global(.person-photo-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.25rem;
+    margin: 1.5rem 0 2.25rem;
+  }
+  .person-content :global(.person-photo-grid figure),
+  .person-content :global(.person-document) {
+    margin: 0;
+    background: var(--color-off-white);
+    border: 1px solid #d8dce3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .person-content :global(.person-document) {
+    max-width: 430px;
+    margin: 1.5rem auto 2.25rem;
+  }
+  .person-content :global(.person-photo-grid img),
+  .person-content :global(.person-document img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+  }
+  .person-content :global(.person-photo-grid figcaption),
+  .person-content :global(.person-document figcaption) {
+    padding: 0.8rem 1rem 1rem;
+    color: var(--color-gray);
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
   .back-link {
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -66,5 +101,6 @@ const { name, role, dates, photo, summary } = entry.data;
   }
   @media (max-width: 600px) {
     .person-hero__inner { flex-direction: column; text-align: center; }
+    .person-content :global(.person-photo-grid) { grid-template-columns: 1fr; }
   }
 </style>
