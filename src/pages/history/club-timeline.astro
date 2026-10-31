@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const eras = [
+  {
+    date: 'August 26, 1924',
+    title: 'Mount Union organizes a country club and summer colony',
+    text: 'R.P.M. Davis helps convene an organizing meeting at Mount Union High School. Contemporary reporting describes 128 stockholders and charter members and a 300-acre tract on the Walter Gifford farm, formerly the Cowden farm, acquired from Hercules Powder Company.',
+    image: '/images/archive/1924-founding.webp',
+    alt: '1924 newspaper coverage of the country club formation',
+  },
+  {
+    date: 'September 1924',
+    title: 'Tom Bendelow evaluates the land',
+    text: 'After visiting the site, golf architect Tom Bendelow writes to Davis that the rolling terrain is suitable for an 18-hole course. His letter documents the design vision, not a completed course.',
+    image: '/images/history/jvcc-course-design.webp',
+    alt: 'Historic Juniata Valley golf course design',
+  },
+  {
+    date: '1926',
+    title: 'The recreation community takes physical shape',
+    text: 'Reports describe a project approaching 600 acres, assembled from several farms. Roads, water, sewer service, cottages, golf, swimming, tennis, boating, fishing, and trapshooting are part of the plan. Anna Wagner Keichline designs the Spanish-influenced stone-and-stucco clubhouse; Charles H. Baldwin builds it.',
+    image: '/images/history/clubhouse-construction.webp',
+    alt: 'The Juniata Valley Colony Club clubhouse under construction',
+  },
+  {
+    date: 'August 12, 1927',
+    title: 'The clubhouse formally opens',
+    text: 'A dance marks the formal opening. The first nine golf holes are already in use, the pool is nearing completion, and another nine holes have been started. Contemporary opening reports separate what was playable from what promoters still planned to build.',
+    image: '/images/archive/1928-season-opening.webp',
+    alt: 'Early season newspaper coverage from the Colony Club era',
+  },
+  {
+    date: '1928–1931',
+    title: 'The course and club mature',
+    text: 'The club publishes its own newspaper, hosts social events, expands the cottage colony, and continues building the golf course. A 1931 article credits superintendent William H. Griffith with constructing the last nine holes during his three years at the club.',
+    image: '/images/history/colony-club-fairway-7.webp',
+    alt: 'Historic view of fairway seven at the Colony Club',
+  },
+  {
+    date: 'March 1936',
+    title: 'The St. Patrick’s Day flood destroys homes and records',
+    text: 'The Juniata River devastates the cottage colony. Homes are swept away or torn open, possessions scatter downstream, and the club’s filing cabinet is recovered about 200 yards from where it had been stored. Its soaked records are unreadable.',
+    image: '/images/history/1936-flood.webp',
+    alt: 'Flood damage at the Juniata Valley Colony Club in 1936',
+  },
+  {
+    date: '1936–1938',
+    title: 'A failed sale leads to a new owner',
+    text: 'A June 1936 trustee sale to a group led by Robert C. Yocum Jr. becomes entangled in a tax dispute. A court sets the sale aside in 1937. On April 2, 1938, the Home Association of Simpson-Hunt Post 107 purchases the property at a new trustee sale.',
+    image: '/images/archive/1938-sale-to-american-legion.webp',
+    alt: '1938 newspaper coverage of the American Legion purchase',
+  },
+  {
+    date: 'April 1938',
+    title: 'The Legion launches a family recreation program',
+    text: 'The new owners organize committees, repair greens and fairways, improve the pool and tennis courts, and offer golf, swimming, dancing, food, and children’s recreation. The property becomes the American Legion Country Club.',
+    image: '/images/history/jvcc-seal.webp',
+    alt: 'Juniata Valley Country Club seal and property map',
+  },
+  {
+    date: '1947–1951',
+    title: 'Expansion and memory after World War II',
+    text: 'A clubhouse addition opens in 1947 as membership grows. In 1951, Bob Goodman, Ike Cunningham, Clyde Leighty, and Sam Price assemble championship trophies and plaques in the club bar, preserving a record that links the Colony Club and Legion eras.',
+    image: '/images/archive/1951-alcc-plaque.webp',
+    alt: 'Historic ALCC championship plaque',
+  },
+  {
+    date: '1950s–1960s',
+    title: 'Mount Union becomes a tournament destination',
+    text: 'Open and invitational events draw professionals and amateurs to Mount Union. A 1962 advertisement promotes the twelfth annual Mount Union Invitational with $3,000 in prizes and sponsorship from businesses across the region.',
+    image: '/images/golf-course/course-drawing.webp',
+    alt: 'Illustrated drawing of the American Legion Country Club course',
+  },
+  {
+    date: 'June 1975',
+    title: 'The modern June Invitational begins',
+    text: 'A new two-person amateur best-ball event brings golfers and returning families together for competition, dinner, dancing, and swimming. Don Dimoff Sr. and Butch Yelovich win the inaugural tournament. It grows into ALCC’s largest annual golf tradition.',
+    image: '/images/archive/1975-june-invitational-inaugural.webp',
+    alt: 'Newspaper coverage of the inaugural 1975 June Invitational',
+  },
+  {
+    date: '1986–2026',
+    title: 'Champions carry the tradition forward',
+    text: 'Elinor Wible’s 48 club championships gain national attention in Sports Illustrated in 1986. The June Invitational reaches its 50th playing in 2024 and continues to attract a full field. After the 2026 fire at the Legion’s Stone House, the country club also becomes the base for continuing Post 107 operations.',
+    image: '/images/archive/2024-june-invitational-50th.webp',
+    alt: '50th June Invitational graphic from 2024',
+  },
+];
+
+const sources = [
+  ['1924 formation', 'Mount Union Times, August 29, 1924, page 4', 'https://www.newspapers.com/image/346541379/'],
+  ['Bendelow letter', 'The Daily News, September 23, 1924, page 1', 'https://newspaperarchive.com/the-daily-news-sep-23-1924-p-1/'],
+  ['Club construction', 'The Daily News, August 18, 1926, pages 1 and 4', 'https://newspaperarchive.com/the-daily-news-aug-18-1926-p-1/'],
+  ['Formal opening', 'The Daily News, July 27, 1927, page 1', 'https://newspaperarchive.com/the-daily-news-jul-27-1927-p-1/'],
+  ['Opening follow-up', 'Altoona Mirror, August 18, 1927, page 13', 'https://newspaperarchive.com/altoona-mirror-aug-18-1927-p-13/'],
+  ['1936 flood', 'Mount Union Times, March 26, 1936, pages 1 and 9', 'https://www.newspapers.com/image/346583157/'],
+  ['Legion purchase', 'Mount Union Times, April 7, 1938, page 1', 'https://www.newspapers.com/image/346603266/'],
+  ['Legion development program', 'Mount Union Times, April 28, 1938, page 1', 'https://www.newspapers.com/image/346603810/'],
+  ['Club retrospective', 'The Daily News, June 6, 1967, special-edition page 22', 'https://newspaperarchive.com/the-daily-news-jun-06-1967-p-54/'],
+  ['First modern best-ball invitational', 'The Daily News, June 21, 1975, page 4', 'https://newspaperarchive.com/the-daily-news-jun-21-1975-p-4/'],
+];
+---
+
+<BaseLayout title="Club and Course Timeline" description="A source-based timeline of the American Legion Country Club and the golf course it grew from, 1924 to today.">
+  <PageHero title="Club and Course Timeline" subtitle="From a 1924 summer-colony plan to a century of Mount Union golf." />
+
+  <section class="section">
+    <div class="container timeline-intro">
+      <span class="eyebrow">Built in stages · Preserved through community</span>
+      <h2>The Course Was an Idea Before It Was Eighteen Holes</h2>
+      <p>The surviving record shows a project that evolved over several years.
+      Tom Bendelow approved the terrain for an 18-hole course in 1924. The
+      first nine holes were playable when the clubhouse opened in 1927, and
+      the final nine were built during the years that followed. That phased
+      story is more precise than treating a single date as the completion of
+      every club facility.</p>
+    </div>
+  </section>
+
+  <section class="section section--off-white">
+    <div class="container timeline" aria-label="ALCC historical timeline">
+      {eras.map((era, index) => (
+        <article class:list={["timeline-entry", { "timeline-entry--reverse": index % 2 === 1 }]}>
+          <div class="timeline-entry__image">
+            <img src={era.image} alt={era.alt} loading="lazy" />
+          </div>
+          <div class="timeline-entry__content">
+            <span class="timeline-entry__date">{era.date}</span>
+            <h2>{era.title}</h2>
+            <p>{era.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container sources">
+      <span class="eyebrow">Research trail</span>
+      <h2>Selected Primary Sources</h2>
+      <p>This timeline draws on the club’s Golf archive and the wider local
+      History archive. Where later recollections conflict with reporting made
+      at the time, the contemporary report is identified here.</p>
+      <ol>
+        {sources.map(([label, title, url]) => (
+          <li><strong>{label}:</strong> <a href={url} target="_blank" rel="noopener">{title}</a></li>
+        ))}
+      </ol>
+      <div class="source-actions">
+        <a class="btn btn--navy" href="/history/archive">See Archive Coverage</a>
+        <a class="btn btn--red" href="/golf-course">Explore the Course Today</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .timeline-intro { max-width: 820px; }
+  .timeline { position: relative; }
+  .timeline::before { background: var(--color-red); content: ''; left: 50%; position: absolute; top: 0; bottom: 0; width: 3px; transform: translateX(-50%); }
+  .timeline-entry { align-items: center; display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; margin-bottom: 3rem; position: relative; }
+  .timeline-entry:last-child { margin-bottom: 0; }
+  .timeline-entry::after { background: var(--color-white); border: 4px solid var(--color-red); border-radius: 50%; content: ''; height: 18px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 18px; }
+  .timeline-entry--reverse .timeline-entry__image { order: 2; }
+  .timeline-entry--reverse .timeline-entry__content { order: 1; text-align: right; }
+  .timeline-entry__image img { aspect-ratio: 16 / 10; border-radius: var(--radius); box-shadow: var(--shadow-md); margin: 0; object-fit: cover; width: 100%; }
+  .timeline-entry__date { color: var(--color-red); display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.35rem; text-transform: uppercase; }
+  .timeline-entry h2 { font-size: clamp(1.35rem, 2.5vw, 1.9rem); }
+  .sources { max-width: 900px; }
+  .sources li { margin-bottom: 0.65rem; }
+  .source-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  @media (max-width: 760px) {
+    .timeline::before { left: 9px; }
+    .timeline-entry, .timeline-entry--reverse { gap: 1rem; grid-template-columns: 1fr; padding-left: 2.25rem; }
+    .timeline-entry::after { left: 9px; top: 1.1rem; }
+    .timeline-entry--reverse .timeline-entry__image, .timeline-entry--reverse .timeline-entry__content { order: initial; text-align: left; }
+  }
+</style>

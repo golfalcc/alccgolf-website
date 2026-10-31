@@ -16,6 +16,15 @@ const slugMap: Record<string,string> = {
   "prominent-individuals": "Prominent Individuals in ALCC History",
   "route-22-cup": "Route 22 Cup",
 };
+
+const milestones = [
+  { year: "1924", title: "The idea takes shape", text: "R.P.M. Davis helps organize the Juniata Valley project. Tom Bendelow inspects the land and finds it suitable for an 18-hole course." },
+  { year: "1927", title: "The clubhouse opens", text: "The clubhouse formally opens on August 12. The first nine holes are already in play, with work underway on the second nine." },
+  { year: "1936", title: "Flood and recovery", text: "The St. Patrick's Day flood devastates the riverside cottage colony and destroys much of the club's documentary record." },
+  { year: "1938", title: "The Legion era begins", text: "The Home Association of Simpson-Hunt Post 107 purchases the property at a trustee sale and begins a family-recreation program." },
+  { year: "1947", title: "The clubhouse grows", text: "A major clubhouse addition opens as membership and activity increase after World War II." },
+  { year: "1975", title: "A new invitational", text: "The first two-person amateur best-ball event launches the tradition now known as the June Invitational." },
+];
 ---
 
 <BaseLayout title="History" description="The history of American Legion Country Club, founded in 1924 as the Juniata Valley Colony Club.">
@@ -23,27 +32,30 @@ const slugMap: Record<string,string> = {
 
   <section class="section">
     <div class="container narrative">
-      <span class="eyebrow">Juniata Valley Colony Club — Established 1927</span>
+      <span class="eyebrow">Organized in 1924 · Clubhouse opened in 1927</span>
       <p>In the heart of Pennsylvania's Juniata Valley, the story of American
       Legion Country Club unfolds as one of vision, collaboration, and
       community. It began on August 26, 1924, when R.P.M. Davis, a retired
       banker and manufacturer, called a meeting at Mount Union High School to
-      launch what would become the largest public enterprise ever undertaken
-      by the people of Mount Union — a country club and summer colony on the
-      300-acre Walter Gifford farm, organized as the Juniata Valley Realty
-      Corporation and Juniata Valley Country Club with 128 stockholders and
-      charter members.</p>
+      launch a country club and summer colony on the 300-acre Walter Gifford
+      farm, formerly the Cowden farm. A contemporary report counted 128
+      stockholders and charter members and described roughly two miles of
+      Juniata River frontage.</p>
 
-      <p>The clubhouse, swimming pool, tennis courts, and an 18-hole golf
-      course were completed by 1926, drawing influential members including
-      Governor J.S. Fisher, former Governor William C. Sproul, Pennsylvania
-      Railroad President General W.W. Atterbury, and Penn State President
-      Ralph D. Hetzel. The St. Patrick's Day Flood of 1936 devastated the
-      property and pushed the club into bankruptcy; after a brief,
-      short-lived sale, The American Legion purchased the club on June 6,
-      1937, and transformed it into the American Legion Country Club that
-      continues today. Membership grew sharply after World War II, prompting
-      a clubhouse addition in 1947.</p>
+      <p>The development grew in stages. By 1926, reports described a much
+      larger tract assembled from several farms, along with roads, utilities,
+      cottages, a clubhouse under construction, and plans for golf, swimming,
+      tennis, boating, fishing, and trapshooting. The clubhouse formally opened
+      on August 12, 1927. The first nine holes were already in use, while work
+      continued on the second nine. A 1931 report credited grounds
+      superintendent William H. Griffith with constructing the last nine.</p>
+
+      <p>The St. Patrick's Day Flood of 1936 devastated the riverside cottage
+      colony and destroyed club records, but activity continued. A 1936 trustee
+      sale became the subject of litigation and was later set aside. Contemporary
+      coverage places the American Legion purchase in April 1938, followed by a
+      development program centered on affordable family recreation. Membership
+      grew after World War II, prompting a clubhouse addition in 1947.</p>
 
       <p>The club's legacy is tied to two names in particular: golf course
       architect <a href="/history/prominent-individuals">Tom Bendelow</a>,
@@ -64,6 +76,27 @@ const slugMap: Record<string,string> = {
           <img src="/images/history/1936-flood.webp" alt="The 1936 St. Patrick's Day Flood" loading="lazy" />
           <figcaption>Damage from the 1936 St. Patrick's Day Flood.</figcaption>
         </figure>
+      </div>
+
+      <div class="history-actions">
+        <a class="btn btn--red" href="/history/club-timeline">Explore the Full Timeline</a>
+        <a class="btn btn--navy" href="/history/archive">Browse the Historical Archive</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container">
+      <span class="eyebrow eyebrow--gold">A Century on the Same Ground</span>
+      <h2>Key Moments in the Club and Course Story</h2>
+      <div class="milestone-grid">
+        {milestones.map((item) => (
+          <article class="milestone-card">
+            <span class="milestone-card__year">{item.year}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -91,4 +124,13 @@ const slugMap: Record<string,string> = {
   .gallery figure { margin: 0; }
   .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); }
   .gallery figcaption { font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem; }
+  .history-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  .eyebrow--gold { color: #ffd966; }
+  .milestone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+  .milestone-card { border-top: 3px solid var(--color-red); padding-top: 1rem; }
+  .milestone-card__year { color: #ffd966; display: block; font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+  .milestone-card h3 { color: var(--color-white); font-size: 1.05rem; }
+  .milestone-card p { color: rgba(255,255,255,0.82); font-size: 0.92rem; margin: 0; }
+  @media (max-width: 850px) { .milestone-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .milestone-grid { grid-template-columns: 1fr; } }
 </style>

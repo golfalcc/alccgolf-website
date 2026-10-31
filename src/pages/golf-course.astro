@@ -88,11 +88,41 @@ const ratings = [
           under the direction of our superintendent.</p>
           <p>The original 18-hole layout traces back to golf course architect
           <a href="/history/prominent-individuals">Tom Bendelow</a>, who
-          envisioned the course on this site in the 1920s. Read more on the
-          <a href="/history">club history</a> page.</p>
+          evaluated the site in 1924 and found the rolling terrain suitable for
+          an 18-hole course. The first nine were in play by the clubhouse's
+          formal opening in August 1927; the second nine followed during the
+          next several years. Read the full <a href="/history/club-timeline">club
+          and course timeline</a>.</p>
         </div>
         <img class="course-photo" src="/images/golf-course/course-1.webp" alt="Aerial view of the American Legion Country Club golf course" loading="lazy" />
       </div>
+
+      <div class="course-facts" aria-label="Course facts">
+        <article><strong>18</strong><span>Holes</span></article>
+        <article><strong>74</strong><span>Par</span></article>
+        <article><strong>6,574</strong><span>Gold Tee Yards</span></article>
+        <article><strong>5</strong><span>Sets of Tees</span></article>
+        <article><strong>634</strong><span>Yard Par 6 Seventh</span></article>
+      </div>
+
+      <section class="course-heritage" aria-labelledby="course-heritage-heading">
+        <div>
+          <span class="eyebrow">Course heritage</span>
+          <h2 id="course-heritage-heading">A Layout Built in Stages</h2>
+          <p>The course belongs to the larger story of the Juniata Valley
+          Colony Club, a 1920s country-club and cottage development along the
+          river. Bendelow supplied the early design vision. Club employees and
+          local builders then turned farmland into playable golf ground over a
+          period of years.</p>
+          <p>Contemporary accounts identify the first nine as playable in 1927
+          and credit superintendent William H. Griffith with constructing the
+          last nine by 1931. Later generations reshaped and maintained the
+          course while preserving its unusual mountain character - including
+          the par-6 seventh hole.</p>
+          <a class="btn btn--navy" href="/history/club-timeline">See How the Course Developed</a>
+        </div>
+        <img src="/images/history/colony-club-fairway-7.webp" alt="Historic view of fairway seven at the Juniata Valley Colony Club" loading="lazy" />
+      </section>
 
       <h2>Course Scorecard</h2>
       <p>Yardage, par, and handicap for all five sets of tees, current as of
@@ -236,10 +266,29 @@ const ratings = [
   }
   .two-col { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem; }
   .course-photo { width: 100%; height: 100%; min-height: 220px; object-fit: cover; border-radius: var(--radius); }
+  .course-facts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 2.25rem 0 3rem;
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .course-facts article { background: var(--color-off-white); padding: 1.1rem 0.75rem; text-align: center; }
+  .course-facts article + article { border-left: 1px solid var(--color-gray-light); }
+  .course-facts strong { color: var(--color-red); display: block; font-family: var(--font-heading); font-size: 1.9rem; line-height: 1; }
+  .course-facts span { color: var(--color-blue-dark); display: block; font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; margin-top: 0.45rem; text-transform: uppercase; }
+  .course-heritage { align-items: center; background: var(--color-off-white); border-left: 8px solid var(--color-blue); border-radius: var(--radius); display: grid; gap: 2rem; grid-template-columns: 1.35fr 1fr; margin: 0 0 3rem; padding: clamp(1.5rem, 4vw, 2.25rem); }
+  .course-heritage img { aspect-ratio: 4 / 3; border-radius: var(--radius); margin: 0; object-fit: cover; width: 100%; }
   .gallery { margin: 2rem 0; }
   .gallery img { width: 100%; border-radius: var(--radius); object-fit: cover; }
   .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+  @media (max-width: 800px) {
+    .two-col { grid-template-columns: 1fr; }
+    .course-facts { grid-template-columns: repeat(2, 1fr); }
+    .course-facts article + article { border-left: 0; border-top: 1px solid var(--color-gray-light); }
+    .course-heritage { grid-template-columns: 1fr; }
+  }
 
   .scorecard-wrap {
     overflow-x: auto;

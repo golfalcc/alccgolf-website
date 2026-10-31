@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const collections = [
+  {
+    figure: '7,500+',
+    title: 'Golf archive files reviewed',
+    text: 'Event records, working documents, photos, graphics, scorecards, applications, results, meeting material, and club publications from 2012 through 2026.',
+  },
+  {
+    figure: '2,293',
+    title: 'PDF records',
+    text: 'Tournament paperwork, scorecards, reports, applications, signage, historical clippings, and print-ready club material.',
+  },
+  {
+    figure: '3,374',
+    title: 'Photographs and graphics',
+    text: 'Course views, event photography, tournament badges, social graphics, logos, historic images, and visual records of club life.',
+  },
+  {
+    figure: '250',
+    title: 'Spreadsheets and databases',
+    text: 'Tee sheets, champions lists, player records, tournament databases, results, schedules, and operational material.',
+  },
+  {
+    figure: '38',
+    title: 'June Invitational clipping PDFs',
+    text: 'A nearly continuous newspaper trail from the first best-ball event in 1975 through the 52nd Invitational in 2026.',
+  },
+  {
+    figure: '100+',
+    title: 'Related History items',
+    text: 'Newspaper pages, photographs, research files, and source registers identified by course, club, Legion, Colony Club, and Stone House names.',
+  },
+];
+
+const archiveAreas = [
+  ['Founding and land', 'The 1924 organizing meeting, the original Gifford tract, the larger multi-farm development, the realty corporation, and the distinction between land development and club operations.'],
+  ['Course development', 'Bendelow’s 1924 site evaluation, the first nine holes in play by 1927, construction of the final nine, greenskeeping, course records, scorecards, and modern tee data.'],
+  ['Clubhouse and recreation', 'Anna Wagner Keichline’s clubhouse design, the 1927 opening, pool and tennis facilities, cottage life, social events, the 1947 addition, and later StoneHouse Lounge material.'],
+  ['Flood and Legion transition', 'Contemporary reporting on the 1936 flood, loss of club records, trustee-sale litigation, the April 1938 Legion purchase, and the recreation program that followed.'],
+  ['Championships and leagues', 'Men’s, women’s, and seniors club champions; Twilight League records; Central Counties competition; course records; holes-in-one; and rivalry events.'],
+  ['Major tournaments', 'Spring Classic, June Invitational, Senior Invitational, Fall Classic, club championships, charity outings, applications, tee sheets, flights, scorecards, photos, and results.'],
+];
+
+const newspaperTrail = [
+  ['1924–1931', 'Formation, Bendelow’s course letter, clubhouse construction and opening, early seasons, club officers, finances, and completion of the second nine.'],
+  ['1936–1951', 'Flood losses, trustee sales, American Legion purchase and development, wartime interruption, the 1947 addition, and preservation of championship trophies.'],
+  ['1952–1975', 'Mount Union Opens and Invitationals, course records, club championships, the 1967 retrospective, and the start of the modern June Invitational.'],
+  ['1976–2005', 'Annual June Invitational coverage, club champions, notable local golfers, Elinor Wible’s career, and Frank Stasenko’s work with Mount Union golf.'],
+  ['2006–2026', 'Tournament results and photos, charity events, club operations, the June Invitational’s 50th and 52nd editions, and the club’s expanded role after the 2026 Stone House fire.'],
+];
+---
+
+<BaseLayout title="Historical Archive" description="A guide to the golf records, photographs, tournament files, and newspaper research behind the American Legion Country Club website.">
+  <PageHero title="Historical Archive" subtitle="The records behind the club, the course, and the people who kept both going." />
+
+  <section class="section">
+    <div class="container archive-intro">
+      <span class="eyebrow">Golf files + local history research</span>
+      <h2>A Working Archive, Not Just a Scrapbook</h2>
+      <p>The source collection combines day-to-day club records with a much
+      longer historical trail. Tournament files preserve names, scores, logos,
+      tee sheets, and event practices. Newspaper pages and photographs recover
+      the earlier course, the Colony Club cottage community, the 1936 flood,
+      and the transition to American Legion ownership.</p>
+      <p>Duplicate exports, software dependencies, and print-production files
+      were separated from original records when counting the collection. The
+      totals below describe the usable Golf archive and the course-related
+      material identified in the broader History archive.</p>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container">
+      <span class="eyebrow eyebrow--gold">Collection at a glance</span>
+      <div class="collection-grid">
+        {collections.map((item) => (
+          <article class="collection-card">
+            <span class="collection-card__figure">{item.figure}</span>
+            <h2>{item.title}</h2>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--off-white">
+    <div class="container">
+      <span class="eyebrow">What the archive covers</span>
+      <h2>Six Connected Parts of the ALCC Story</h2>
+      <div class="area-grid">
+        {archiveAreas.map(([title, text], index) => (
+          <article class="area-card">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container newspaper-section">
+      <span class="eyebrow">Newspaper evidence</span>
+      <h2>The Surviving Paper Trail</h2>
+      <p>Because the 1936 flood destroyed club records, newspaper coverage is
+      especially important for the early decades. The archive now links those
+      early reports to the tournament and club records that survive from later
+      years.</p>
+      <div class="newspaper-trail">
+        {newspaperTrail.map(([years, text]) => (
+          <article>
+            <h3>{years}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+      <div class="archive-actions">
+        <a class="btn btn--red" href="/history/club-timeline">Read the Source-Based Timeline</a>
+        <a class="btn btn--navy" href="/events/june-invitational">Explore June Invitational Results</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .archive-intro, .newspaper-section { max-width: 900px; }
+  .eyebrow--gold { color: #ffd966; }
+  .collection-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(3, 1fr); margin-top: 1rem; }
+  .collection-card { border-top: 3px solid var(--color-red); padding-top: 1rem; }
+  .collection-card__figure { color: #ffd966; display: block; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+  .collection-card h2 { color: var(--color-white); font-size: 1.15rem; }
+  .collection-card p { color: rgba(255,255,255,0.82); font-size: 0.92rem; }
+  .area-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); margin-top: 1.5rem; }
+  .area-card { background: var(--color-white); border: 1px solid var(--color-gray-light); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 1.5rem; }
+  .area-card > span { color: var(--color-red); font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; }
+  .area-card h3 { margin-top: 0.4rem; }
+  .area-card p { margin: 0; }
+  .newspaper-trail { border-left: 3px solid var(--color-red); margin: 2rem 0; padding-left: 1.5rem; }
+  .newspaper-trail article { margin-bottom: 1.5rem; }
+  .newspaper-trail article:last-child { margin-bottom: 0; }
+  .newspaper-trail h3 { color: var(--color-red); margin-bottom: 0.25rem; }
+  .newspaper-trail p { margin: 0; }
+  .archive-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  @media (max-width: 850px) { .collection-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .collection-grid, .area-grid { grid-template-columns: 1fr; } }
+</style>

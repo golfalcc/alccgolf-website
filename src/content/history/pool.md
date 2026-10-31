@@ -32,7 +32,6 @@ planning.
   <img src="/images/pool/pool-3.webp" alt="Historic photo of the ALCC pool" loading="lazy" />
 </div>
 
-_Note: this page is not yet linked from the site navigation or the History
-index — add a `src/pages/history/pool.astro` page (see the other History
-pages for the pattern) and a card link on `/history` when you're ready to
-publish it._
+The pool remains part of the club's historical record even as the property
+continues to evolve. See the [club and course timeline](/history/club-timeline)
+for the pool's place in the original Colony Club recreation plan.
