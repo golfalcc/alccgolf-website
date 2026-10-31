@@ -1,7 +1,7 @@
 ---
 title: "Central Counties"
 urlSlug: "central-counties"
-dates: "May 2 – September 27, 2026 (away matches at member clubs)"
+dates: "2027 schedule coming soon"
 format: "Central Counties Golf Association (CCGA) series — two-man best ball, individual/team championships, junior and pro-am/senior championships hosted across member clubs"
 summary: "American Legion Country Club is a member club of the Central Counties Golf Association, hosting and competing in CCGA series events throughout the season."
 order: 1
@@ -21,16 +21,9 @@ Huntingdon Country Club, Iron Masters, Lewistown Country Club, Lost Creek,
 Mountain View, Nittany Country Club, Park Hills, Philipsburg Country Club,
 Sinking Valley, and Summit Country Club.
 
-## 2026 Schedule
+## 2027 Schedule
 
-| Event | Date | Host Club |
-| ----- | ---- | --------- |
-| Two-Man Better Ball | May 2 | Iron Masters Country Club |
-| Individual / Team Championship | June 6–7 | Mountain View Country Club |
-| Junior Championship | August 3 | Summit Country Club |
-| Super Seniors | August 3 | Huntingdon Country Club |
-| Pro-Am | September 19–20 | Park Hills Golf Club |
-| Seniors | September 27 | Huntingdon Country Club |
+The 2027 Central Counties schedule will be posted when it is finalized.
 
 ## Paul Bradley Central Counties Junior Scholarship
 

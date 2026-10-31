@@ -1,7 +1,7 @@
 ---
 title: "Spring Classic"
 urlSlug: "spring-classic"
-dates: "Last full weekend in April"
+dates: "April 24–25, 2027 (last full weekend in April)"
 format: "Two-person team, better ball — gross (Scratch) and net divisions, capped at 80 teams"
 entryFee: "See current year's application for entry fee"
 defendingChampion: "Ryan Coccagna / Calvin Mentzer (Scratch, 2026); Cody Bishop / Jason Deline (Net, 2026)"

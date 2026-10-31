@@ -1,12 +1,12 @@
 ---
 title: "Fall Classic"
 urlSlug: "fall-classic"
-dates: "Late season (2-day weekend as of 2024)"
+dates: "Not held in 2026 — course conditions"
 format: "Two-person team, better ball — Saturday better ball, Sunday 18-hole scramble shootout (2-day format since 2024)"
 entryFee: "See current year's application for entry fee"
 defendingChampion: "Don Dimoff / Bobby Stiffler (2025)"
 image: "/images/fall-classic/logo.webp"
-summary: "Launched in 2015, the Fall Classic is ALCC's late-season showdown — a two-person better ball event that expanded to a 2-day format with a Sunday scramble shootout starting in 2024."
+summary: "Launched in 2015, the Fall Classic is ALCC's late-season two-person team event. The 2026 tournament was not held because of course conditions."
 order: 2
 champions:
   - { year: "2015", name: "Brett Berkheimer", partner: "Dan Wolfe" }
@@ -20,9 +20,14 @@ champions:
   - { year: "2023", name: "Landon Hollenshead", partner: "Calvin Mentzer" }
   - { year: "2024", name: "Andrew Forjan", partner: "John Lowder" }
   - { year: "2025", name: "Don Dimoff", partner: "Bobby Stiffler" }
+  - { year: "2026", name: "Not held", notes: "Course conditions" }
 ---
 
 ## About This Event
+
+### 2026 Status
+
+The 2026 Fall Classic was not played because of course conditions.
 
 Launched in 2015, the Fall Classic quickly became one of the marquee
 events at American Legion Country Club. Known as a late-season showdown,

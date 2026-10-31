@@ -1,7 +1,7 @@
 ---
 title: "June Invitational"
 urlSlug: "june-invitational"
-dates: "Last full weekend in June"
+dates: "June 26–27, 2027 (last full weekend in June)"
 format: "Two-person team, flighted (up to 128 teams across 8 flights)"
 entryFee: "See current year's application for entry fee"
 defendingChampion: "Sean Brannan / Anthony DeGol (2026)"
@@ -76,6 +76,21 @@ over 8 flights of different skill levels. Friday used to be reserved for
 qualifying, but has changed into a practice round day with a huge optional
 skins game. Friday and Saturday nights host several events in the
 StoneHouse Lounge, with a meal served each day of the event.
+
+### Founding Recollection
+
+In a firsthand written account shared with the club on June 25, 2026,
+Charles "Charlie" Fields identified the tournament's three founders as
+Frank Stasenko Jr., Bob Wike, and himself. Fields recalled that Stasenko
+Jr. first approached him about finding a way to help his father, Frank
+Stasenko Sr., generate income for the pro shop. The three men developed a
+tournament patterned after one held at Park Hills, then presented the
+idea to the golf committee and received its approval. Fields also
+remembered Charlie Coons as an important helper in getting the event
+started. Asked about other names associated with the early event, Fields
+recalled Bob Goodman serving as master of ceremonies on Friday and
+Saturday nights and said he did not remember John Remek being closely
+involved.
 
 Camping is available, and many local homes, camps, and cabins are rented
 out for guests during the weekend.

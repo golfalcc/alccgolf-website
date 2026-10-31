@@ -7,8 +7,9 @@ const eras = [
     date: 'August 26, 1924',
     title: 'Mount Union organizes a country club and summer colony',
     text: 'R.P.M. Davis helps convene an organizing meeting at Mount Union High School. Contemporary reporting describes 128 stockholders and charter members and a 300-acre tract on the Walter Gifford farm, formerly the Cowden farm, acquired from Hercules Powder Company.',
-    image: '/images/archive/1924-founding.webp',
+    image: '/images/archive/1924-founding-article.webp',
     alt: '1924 newspaper coverage of the country club formation',
+    newspaper: true,
   },
   {
     date: 'September 1924',
@@ -28,8 +29,9 @@ const eras = [
     date: 'August 12, 1927',
     title: 'The clubhouse formally opens',
     text: 'A dance marks the formal opening. The first nine golf holes are already in use, the pool is nearing completion, and another nine holes have been started. Contemporary opening reports separate what was playable from what promoters still planned to build.',
-    image: '/images/archive/1928-season-opening.webp',
+    image: '/images/archive/1928-season-opening-article.webp',
     alt: 'Early season newspaper coverage from the Colony Club era',
+    newspaper: true,
   },
   {
     date: '1928–1931',
@@ -56,8 +58,9 @@ const eras = [
     date: '1936–1938',
     title: 'A failed sale leads to a new owner',
     text: 'A June 1936 trustee sale to a group led by Robert C. Yocum Jr. becomes entangled in a tax dispute. A court sets the sale aside in 1937. On April 2, 1938, the Home Association of Simpson-Hunt Post 107 purchases the property at a new trustee sale.',
-    image: '/images/archive/1938-sale-to-american-legion.webp',
+    image: '/images/archive/1938-sale-to-american-legion-article.webp',
     alt: '1938 newspaper coverage of the American Legion purchase',
+    newspaper: true,
   },
   {
     date: 'April 1938',
@@ -83,9 +86,10 @@ const eras = [
   {
     date: 'June 1975',
     title: 'The modern June Invitational begins',
-    text: 'A new two-person amateur best-ball event brings golfers and returning families together for competition, dinner, dancing, and swimming. Don Dimoff Sr. and Butch Yelovich win the inaugural tournament. It grows into ALCC’s largest annual golf tradition.',
-    image: '/images/archive/1975-june-invitational-inaugural.webp',
+    text: 'According to a June 25, 2026 firsthand account from Charles “Charlie” Fields, Frank Stasenko Jr. asked him to help create a source of income for his father Frank Sr.’s pro shop. Fields, Stasenko Jr., and Bob Wike devised a tournament modeled on one at Park Hills, then obtained golf-committee approval; Fields also remembered Charlie Coons as an important helper. Don Dimoff Sr. and Butch Yelovich win the inaugural two-person best-ball event, which grows into ALCC’s largest annual golf tradition.',
+    image: '/images/archive/1975-june-invitational-inaugural-article.webp',
     alt: 'Newspaper coverage of the inaugural 1975 June Invitational',
+    newspaper: true,
   },
   {
     date: '1986–2026',
@@ -133,8 +137,14 @@ const sources = [
     <div class="container timeline" aria-label="ALCC historical timeline">
       {eras.map((era, index) => (
         <article class:list={["timeline-entry", { "timeline-entry--reverse": index % 2 === 1 }]}>
-          <div class="timeline-entry__image">
-            <img src={era.image} alt={era.alt} loading="lazy" />
+          <div class:list={["timeline-entry__image", { "timeline-entry__image--newspaper": era.newspaper }]}>
+            {era.newspaper ? (
+              <a href={era.image} target="_blank" rel="noopener" aria-label={`Open ${era.alt}`} title="Open the full article clipping">
+                <img src={era.image} alt={era.alt} loading="lazy" />
+              </a>
+            ) : (
+              <img src={era.image} alt={era.alt} loading="lazy" />
+            )}
           </div>
           <div class="timeline-entry__content">
             <span class="timeline-entry__date">{era.date}</span>
@@ -157,6 +167,7 @@ const sources = [
         {sources.map(([label, title, url]) => (
           <li><strong>{label}:</strong> <a href={url} target="_blank" rel="noopener">{title}</a></li>
         ))}
+        <li><strong>June Invitational founding:</strong> Charles “Charlie” Fields, firsthand written recollection shared with the club, June 25, 2026.</li>
       </ol>
       <div class="source-actions">
         <a class="btn btn--red" href="/history/colony-club-story">Read the Deep History</a>
@@ -177,6 +188,8 @@ const sources = [
   .timeline-entry--reverse .timeline-entry__image { order: 2; }
   .timeline-entry--reverse .timeline-entry__content { order: 1; text-align: right; }
   .timeline-entry__image img { aspect-ratio: 16 / 10; border-radius: var(--radius); box-shadow: var(--shadow-md); margin: 0; object-fit: cover; width: 100%; }
+  .timeline-entry__image--newspaper a { cursor: zoom-in; display: block; }
+  .timeline-entry__image--newspaper img { object-position: top center; }
   .timeline-entry__date { color: var(--color-red); display: block; font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.35rem; text-transform: uppercase; }
   .timeline-entry h2 { font-size: clamp(1.35rem, 2.5vw, 1.9rem); }
   .sources { max-width: 900px; }
