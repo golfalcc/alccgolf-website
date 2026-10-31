@@ -1,7 +1,7 @@
 ---
 name: "Alton \"Bud\" Fields"
 role: "Fourteen-Time Club Champion and Regional Amateur Champion"
-photo: "/images/people/alton-bud-fields-profile.png"
+photo: "/images/people/alton-bud-fields-profile-styled.png"
 summary: "A fourteen-time ALCC club champion whose victories from 1945 through 1971, course records, Mount Union Open title, and Central Counties championship made him one of the defining golfers in club history."
 order: 5
 ---
