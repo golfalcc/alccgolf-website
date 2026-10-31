@@ -91,8 +91,11 @@ Fields's son, Charles "Charlie" Fields, has helped identify surviving
 club photographs. In a firsthand written exchange shared with the club
 in 2026, Charles identified one image as Bud teeing off from the old
 seventeenth tee. He also confirmed that another photograph showed Bud
-with Charles's mother and Nan Anderson. Those identifications preserve
-valuable context that the photographs themselves did not record.
+with his wife, Pauline Fields, and Nan Anderson. A labeled copy in the
+club's MU Country Club photograph collection identifies the three from
+left to right as Nan Anderson, Bud Fields, and Pauline Fields. Those
+identifications preserve valuable context that the photograph itself
+did not record.
 
 <div class="person-photo-grid">
   <figure>
@@ -100,8 +103,8 @@ valuable context that the photographs themselves did not record.
     <figcaption>Bud Fields teeing off from the old seventeenth tee, identified by his son Charles Fields on April 13, 2026.</figcaption>
   </figure>
   <figure>
-    <img src="/images/people/bud-fields-with-family.jpg" alt="Bud Fields seated between Charles Fields's mother and Nan Anderson at the Mount Union course" loading="lazy">
-    <figcaption>Bud Fields (center) with Charles Fields's mother and Nan Anderson at the Mount Union course, identified by Charles Fields on April 13, 2026.</figcaption>
+    <img src="/images/people/bud-fields-with-family.jpg" alt="Nan Anderson, Bud Fields, and Pauline Fields at the Mount Union course" loading="lazy">
+    <figcaption>Nan Anderson (left), Bud Fields (center), and Pauline Fields at the Mount Union course. Charles Fields confirmed the photograph on April 13, 2026; the names and order are also recorded on a labeled club copy.</figcaption>
   </figure>
 </div>
 
@@ -126,3 +129,4 @@ For the complete year-by-year record, see [Men's Club Champions](/history/mens-c
 - *Clearfield Progress*, August 9, 1959, page 10 — Central Counties Amateur championship.
 - *The Daily News*, September 7, 1965, page 4 — twelfth club championship.
 - Charles Fields, firsthand written photograph identifications shared with the club, April 13, 2026.
+- MU Country Club photograph collection, labeled copy identifying Nan Anderson, Bud Fields, and Pauline Fields.
