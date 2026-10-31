@@ -62,6 +62,12 @@ const ratings = [
 
   <section class="section">
     <div class="container">
+      <aside class="course-notice course-notice--seasonal" aria-labelledby="seasonal-notice-heading">
+        <span class="course-notice__label">Seasonal Update</span>
+        <h2 id="seasonal-notice-heading">Golf Course Closes November 1, 2026</h2>
+        <p>The golf course will close for the winter beginning Sunday, November 1, 2026. Thank you to our members and guests for a great season.</p>
+      </aside>
+
       <aside class="course-notice" aria-labelledby="course-notice-heading">
         <span class="course-notice__label">Course Condition Notice</span>
         <h2 id="course-notice-heading">Temporary Daily Rates Now in Effect</h2>
@@ -213,6 +219,11 @@ const ratings = [
     margin-bottom: 2.5rem;
     padding: clamp(1.5rem, 4vw, 2.25rem);
   }
+  .course-notice--seasonal {
+    background: #fff4cf;
+    border-left-color: var(--color-blue-dark);
+  }
+  .course-notice--seasonal .course-notice__label { color: var(--color-blue-dark); }
   .course-notice__label {
     color: var(--color-red);
     display: block;

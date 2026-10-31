@@ -4,7 +4,7 @@ summary: "Ladies Club Championships at American Legion Country Club, 1942 to pre
 order: 1
 ---
 <div class="defending-champion">
-  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__label">Most Recent Champion</span>
   <span class="defending-champion__name">Kathie Ramsey (2025)</span>
 </div>
 
@@ -54,7 +54,7 @@ order: 1
 | 1980 | Elinor Wible | 2023 | Wava Baer |
 | 1981 | Elinor Wible | 2024 | Wava Baer |
 | 1982 | Elinor Wible | 2025 | Kathie Ramsey |
-| 1983 | Elinor Wible |      |      |
+| 1983 | Elinor Wible | 2026 | No Championship — course conditions |
 | 1984 | Elinor Wible |      |      |
 
 ## Championship Count

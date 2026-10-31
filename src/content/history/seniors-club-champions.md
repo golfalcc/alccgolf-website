@@ -4,7 +4,7 @@ summary: "Seniors Club Champions at American Legion Country Club, 2012 to presen
 order: 3
 ---
 <div class="defending-champion">
-  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__label">Most Recent Champion</span>
   <span class="defending-champion__name">Daniel Atherton (2025)</span>
 </div>
 
@@ -27,6 +27,7 @@ order: 3
 | 2023 | Daniel Atherton |
 | 2024 | Daniel Atherton |
 | 2025 | Daniel Atherton |
+| 2026 | No Championship — course conditions |
 
 _Source: American Legion Country Club club records. Edit
 `src/content/history/seniors-club-champions.md` to add each new champion._

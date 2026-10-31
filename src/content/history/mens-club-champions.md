@@ -4,7 +4,7 @@ summary: "Men's Club Champions from the Juniata Valley Colony Club era through t
 order: 2
 ---
 <div class="defending-champion">
-  <span class="defending-champion__label">Defending Champion</span>
+  <span class="defending-champion__label">Most Recent Champion</span>
   <span class="defending-champion__name">Matt Souders (2025)</span>
 </div>
 
@@ -71,7 +71,7 @@ order: 2
 | 1978 | Mike Yelovich — his 7th title (48th tournament since 1927), beat Gary Calupca 4 and 2 | 2023 | Bobby Mort |
 | 1979 | Charles Fields | 2024 | Trey Heffelfinger |
 | 1980 | Don Dimoff Jr. | 2025 | Matt Souders |
-| 1981 | Mike Yelovich |  |  |
+| 1981 | Mike Yelovich | 2026 | No Championship — course conditions |
 | 1982 | Don Dimoff Jr. |  |  |
 
 ## Championship Count

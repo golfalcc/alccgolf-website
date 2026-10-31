@@ -1,14 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-
-const events = [
-  { name: "Spring Classic", window: "Last full weekend in April", href: "/events/spring-classic" },
-  { name: "June Invitational", window: "Last full weekend in June", href: "/events/june-invitational" },
-  { name: "Senior Invitational", window: "Late summer", href: "/events/senior-invitational" },
-  { name: "Central Counties (CCGA)", window: "May 2 – Sept 27, 2026 (away matches at member clubs)", href: "/events/central-counties" },
-  { name: "Fall Classic", window: "Late season (two-day weekend)", href: "/events/fall-classic" },
-];
 ---
 
 <BaseLayout title="Calendar" description="Calendar of events for American Legion Country Club.">
@@ -40,20 +32,6 @@ const events = [
       update an event there and it will appear here automatically. Manage
       events at
       <a href="https://www.facebook.com/americanlegioncountryclub/" target="_blank" rel="noopener">facebook.com/americanlegioncountryclub</a>.</em></p>
-
-      <h2 style="margin-top:2.5rem;">Quick Reference</h2>
-      <table>
-        <thead><tr><th>Event</th><th>Approximate Window</th><th></th></tr></thead>
-        <tbody>
-          {events.map((e) => (
-            <tr>
-              <td>{e.name}</td>
-              <td>{e.window}</td>
-              <td><a href={e.href}>Details &rarr;</a></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   </section>
 </BaseLayout>
