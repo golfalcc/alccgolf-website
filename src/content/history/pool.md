@@ -1,11 +1,15 @@
 ---
 title: "The ALCC Pool"
-summary: "The club's swimming pool, part of ALCC since 1928, closed in recent years due to a significant leak."
+summary: "The club's swimming pool, part of the original 1920s Colony Club recreation complex, closed in recent years due to a significant leak."
 order: 8
 ---
 
-Established in **1928**, alongside the clubhouse, the pool at ALCC was long
-a cornerstone of the club experience. For generations it provided a place
+The pool was part of the Colony Club's recreation plan by **1926** and stood
+beside the clubhouse during its **1927 opening season**. Contemporary reports
+describe the opening-era facilities at slightly different stages of completion,
+so the surviving evidence does not support reducing the pool's beginning to a
+single 1928 date. It was long a cornerstone of the club experience. For
+generations it provided a place
 for families to gather, with a deep end and diving board for the
 adventurous and a shallow section for younger swimmers. From **Memorial Day
 to Labor Day**, countless members enjoyed relaxing summer days by the

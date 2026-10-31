@@ -1,0 +1,324 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const evidenceTypes = [
+  ['Contemporary report', 'A newspaper or notice published when the event occurred. These sources carry the most weight for dates and named roles.'],
+  ['Promoter statement', 'A claim made by R.P.M. Davis or another project advocate. Useful for intent and finances, but not an independent audit.'],
+  ['Later recollection', 'A retrospective account preserving valuable memories. When its dates conflict with contemporary reports, the earlier evidence is preferred.'],
+  ['Open question', 'A point that still needs a deed, survey, court file, plan, or another original record before it can be stated as fact.'],
+];
+
+const people = [
+  ['R.P.M. Davis', 'Principal promoter who helped convene the 1924 organizing meeting and publicly defended the project’s finances in 1929.'],
+  ['Tom Bendelow', 'Golf architect whose September 18, 1924 letter judged the land suitable for an 18-hole course. The letter records a design vision, not a finished layout.'],
+  ['Anna Wagner Keichline', 'Pennsylvania’s first registered woman architect and the documented designer of the stone-and-stucco clubhouse.'],
+  ['Charles H. Baldwin', 'Contractor identified in the 1926 construction account as the clubhouse builder.'],
+  ['Ralph Ganoe', 'Superintendent named while the clubhouse and wider recreation project were under construction.'],
+  ['William H. Griffith', 'Grounds superintendent credited in 1931 with building the final nine holes during his three years at the club.'],
+  ['Dr. Ralph D. Hetzel', 'Penn State president who was elected president of both the Realty Corporation and Colony Club in 1930.'],
+  ['C. W. Jones, R. E. Bell, and H. V. Shope', 'Leaders of the house board that organized the Legion’s recreation program after the 1938 purchase.'],
+];
+
+const sources = [
+  ['Formation and first land purchase', 'Mount Union Times, August 29, 1924, page 4', 'https://www.newspapers.com/image/346541379/'],
+  ['Bendelow inspection and letter', 'The Daily News, September 23, 1924, page 1', 'https://newspaperarchive.com/the-daily-news-sep-23-1924-p-1/'],
+  ['Construction, acreage, architect, and builder', 'The Daily News, August 18, 1926, pages 1 and 4', 'https://newspaperarchive.com/the-daily-news-aug-18-1926-p-1/'],
+  ['Davis prospectus and business plan', 'Mount Union Times, August 27, 1926, pages 1 and 12', 'https://www.newspapers.com/image/346679821/'],
+  ['Clubhouse opening announcement', 'The Daily News, July 27, 1927, page 1', 'https://newspaperarchive.com/the-daily-news-jul-27-1927-p-1/'],
+  ['Opening follow-up', 'Altoona Mirror, August 18, 1927, page 13', 'https://newspaperarchive.com/altoona-mirror-aug-18-1927-p-13/'],
+  ['Realty company and club finances', 'Mount Union Times, December 6, 1929, pages 1 and 20', 'https://www.newspapers.com/image/346555511/'],
+  ['1930 officers and proposed debt increase', 'Mount Union Times, April 4, 1930, page 9', 'https://www.newspapers.com/image/346580740/'],
+  ['Construction of the last nine', 'The Daily News, May 9, 1931, page 2', 'https://newspaperarchive.com/the-daily-news-may-09-1931-p-2/'],
+  ['Flood destruction and lost records', 'Mount Union Times, March 26, 1936, pages 1 and 9', 'https://www.newspapers.com/image/346583157/'],
+  ['Yocum trustee sale', 'Mount Union Times, June 11, 1936, page 1', 'https://www.newspapers.com/image/346584896/'],
+  ['Sale litigation', 'Yocum v. Citizens National Bank, Mifflin County Court of Common Pleas', 'https://law.counselstack.com/opinion/yocum-v-citizens-national-bank-pactcomplmiffli-1937'],
+  ['American Legion purchase', 'Mount Union Times, April 7, 1938, page 1', 'https://www.newspapers.com/image/346603266/'],
+  ['Legion development program', 'Mount Union Times, April 28, 1938, page 1', 'https://www.newspapers.com/image/346603810/'],
+];
+---
+
+<BaseLayout title="The Colony Club Story" description="A source-based deep history of the Juniata Valley Colony Club, its golf course, cottage community, and transition to American Legion ownership.">
+  <PageHero title="The Colony Club Story" subtitle="Land, golf, architecture, ambition, flood, and reinvention — reconstructed from the surviving record." />
+
+  <section class="section">
+    <div class="container story-intro">
+      <span class="eyebrow">Deep history · 1924–1938</span>
+      <h2>More Than a Golf Course</h2>
+      <p>The American Legion Country Club began as the recreational center of
+      a much larger idea. The Juniata Valley Realty Corporation planned a
+      summer colony along the Juniata River, while the Juniata Valley Colony
+      Club operated the social and recreational side of the undertaking. Golf
+      was central, but so were cottage lots, roads, utilities, swimming,
+      tennis, boating, fishing, dancing, and dining.</p>
+      <p>That distinction matters. The corporation owned and developed land;
+      the club served members and guests. Their officers sometimes overlapped,
+      and later accounts often treated them as one institution, but a 1929
+      public letter by R.P.M. Davis explicitly distinguished the two.</p>
+      <aside class="research-note">
+        <strong>How this account was built</strong>
+        <p>The 1936 flood destroyed much of the club’s own documentary record.
+        This reconstruction therefore compares contemporary newspapers, a
+        court opinion, later recollections, club records, photographs, and a
+        41-item research register. It states uncertainty where the record does.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container">
+      <span class="eyebrow eyebrow--gold">Reading the evidence</span>
+      <h2>Not Every Historical Claim Has the Same Weight</h2>
+      <div class="evidence-grid">
+        {evidenceTypes.map(([title, text]) => (
+          <article>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--off-white">
+    <div class="container chapters">
+      <article class="chapter">
+        <div class="chapter__label">01 · The land</div>
+        <div>
+          <h2>A 300-Acre Beginning Became a 600-Acre Ambition</h2>
+          <p>On August 26, 1924, organizers met at Mount Union High School.
+          Three days later, the <em>Mount Union Times</em> reported 128
+          stockholders and charter members. It described an initial 300-acre
+          property with about two miles of river frontage: the Walter Gifford
+          farm, formerly the Cowden farm, purchased from Hercules Powder
+          Company.</p>
+          <p>By August 1926, another report described 585 acres assembled from
+          the W. S. Gifford, David Walls, and old Silver Ford farms. Davis soon
+          promoted the holdings as 600 acres with three miles along the river.
+          These are contemporary descriptions, not an exact modern survey, and
+          the complete deed chain has not yet been recovered.</p>
+          <figure>
+            <img src="/images/history/jvcc-seal.webp" alt="Historic Juniata Valley Colony Club seal and property map" loading="lazy" />
+            <figcaption>The surviving seal and property map help visualize a development that extended far beyond the fairways.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">02 · The business plan</div>
+        <div>
+          <h2>Recreation Was Meant to Sell a Summer Community</h2>
+          <p>The founders proposed stock, cottage lots, and a recreation
+          center as parts of one development. The 1924 report projected about
+          400 lots and an overall cost near $125,000. A 1926 prospectus went
+          further, discussing roughly 500 home sites, rental cottages, visitors,
+          membership dues, and revenue from the recreation grounds.</p>
+          <p>Those figures document ambition, not completion. They should not
+          be read as proof that every proposed cottage was built or every lot
+          sold. What is clear is that the golf course, pool, clubhouse, and
+          river setting were intended to make the real-estate venture attractive.</p>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">03 · The course</div>
+        <div>
+          <h2>Bendelow Supplied the Vision; Local Work Made It Playable</h2>
+          <p>After inspecting the property, golf architect Tom Bendelow wrote
+          Davis on September 18, 1924 that the rolling land was suitable for an
+          18-hole course. The surviving letter is planning evidence. It does
+          not mean 18 holes were already laid out or open in 1924.</p>
+          <p>The first nine were in use by the formal clubhouse opening in
+          August 1927. Work on another nine continued afterward. In 1931,
+          grounds superintendent William H. Griffith was specifically credited
+          with building the last nine during his three years at the club. A
+          1967 retrospective also preserved Elmer Booher’s memories of work
+          under R. J. Rutherford. These roles may be complementary; they should
+          not be collapsed into a single designer claim.</p>
+          <figure>
+            <img src="/images/history/colony-club-fairway-7.webp" alt="Historic view of fairway seven at the Juniata Valley Colony Club" loading="lazy" />
+            <figcaption>Historic fairway seven — part of a course built in stages rather than completed on a single founding date.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">04 · The clubhouse and pool</div>
+        <div>
+          <h2>A Keichline Building at the Center of Club Life</h2>
+          <p>By August 1926, the clubhouse was under construction. Contemporary
+          reporting identifies Anna Wagner Keichline as architect, Charles H.
+          Baldwin as builder, and Ralph Ganoe as superintendent. The building
+          used native stone and stucco in a Spanish-influenced design; accounts
+          also describe stone reused from older farm structures and a canal-era
+          bridge.</p>
+          <p>A dance marked the formal opening on August 12, 1927. The first
+          nine golf holes were already playable and the swimming pool was part
+          of the opening-era complex, although reports describe facilities at
+          slightly different stages of completion. That evidence replaces the
+          simpler tradition that both clubhouse and pool were first established
+          in 1928.</p>
+          <figure>
+            <img src="/images/history/clubhouse-pool-construction.webp" alt="Clubhouse and pool construction at the Colony Club" loading="lazy" />
+            <figcaption>The clubhouse and pool developed together as the social center of the colony.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">05 · Growth and strain</div>
+        <div>
+          <h2>The Project Was Expanding and Borrowing at the Same Time</h2>
+          <p>Financial trouble did not begin with the flood. In a December 1929
+          public letter, Davis discussed borrowing, credit pressure, and the
+          separate finances of the realty company and club. Because he was
+          defending the enterprise, his assertions are evidence of his position,
+          not an independent audit.</p>
+          <p>In 1930, Dr. Ralph D. Hetzel — then president of Penn State — was
+          elected president of both organizations. A report naming the new boards
+          also said stockholders had approved increasing authorized indebtedness
+          from $42,500 to $75,000, while planning thirteen more cottages. It is a
+          vivid snapshot of expansion and financial exposure in the same moment.</p>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">06 · The flood</div>
+        <div>
+          <h2>The 1936 Disaster Had Families Behind the Headlines</h2>
+          <p>The St. Patrick’s Day flood tore through the riverside cottage
+          colony. Club records were soaked beyond use, and a filing cabinet was
+          found roughly 200 yards downstream. Yet the surviving reports do not
+          show that every club facility vanished or that golf ceased forever.</p>
+          <p>They also name the people affected. The Robert C. Yocum family
+          returned from Pittsburgh to a destroyed cottage. Stewart C. Moore and
+          his wife came from Aliquippa to clear mud from one that survived. The
+          Robinson and C. C. Smith families were among others reporting losses.
+          The colony was not an abstract real-estate plan; it was a seasonal
+          neighborhood whose households were scattered across the region.</p>
+          <figure>
+            <img src="/images/history/1936-flood.webp" alt="Flood damage at the Juniata Valley Colony Club in 1936" loading="lazy" />
+            <figcaption>The flood destroyed cottages and records, deepening problems that had begun years earlier.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">07 · Sale and court fight</div>
+        <div>
+          <h2>The First Trustee Sale Did Not Become the Legion Purchase</h2>
+          <p>On June 6, 1936, the property was sold at trustee sale for $12,500
+          to a group led by Robert C. Yocum Jr. A dispute over tax liability
+          followed. The Mifflin County Court of Common Pleas set the sale aside
+          in 1937, with later proceedings continuing into 1938.</p>
+          <p>This is the source of a persistent date mix-up. June 6 belongs to
+          the failed Yocum sale, not to an American Legion acquisition. A
+          contemporary April 7, 1938 report places the Legion purchase at a new
+          trustee sale on Saturday, April 2, 1938.</p>
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="chapter__label">08 · Reinvention</div>
+        <div>
+          <h2>The Legion Reorganized the Property Around Regional Family Recreation</h2>
+          <p>The Home Association of Simpson-Hunt Post 107 paid $8,225 for the
+          real property and $200 for equipment, while assuming approximately
+          $4,000 in taxes; the newspaper headline rounded the transaction to
+          $12,000. The exact deed record remains to be examined.</p>
+          <p>Within weeks, Legion leaders announced repairs to greens and
+          fairways, improvements to the pool and tennis courts, cottage sites,
+          dancing, dining, and children’s recreation. Committees included
+          representatives from Mount Union, Huntingdon, Mapleton, McVeytown,
+          Three Springs, Orbisonia, and Robertsdale. Basic family membership did
+          not automatically include golf — another sign that the new club was
+          conceived as broader than the course.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container people-section">
+      <span class="eyebrow">People behind the place</span>
+      <h2>Documented Roles in the Early Story</h2>
+      <div class="people-list">
+        {people.map(([name, role]) => (
+          <article><h3>{name}</h3><p>{role}</p></article>
+        ))}
+      </div>
+      <p class="people-note">Many more directors, governors, committee members,
+      cottage families, employees, and golfers survive in the research register.
+      Initials and spellings have been retained when the evidence does not safely
+      support expanding them.</p>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container questions">
+      <span class="eyebrow eyebrow--gold">Still to be discovered</span>
+      <h2>Open Questions in the Archive</h2>
+      <ul>
+        <li>The complete deed chain, exact purchase prices, and surveyed acreage of the Gifford, Walls, and Silver Ford tracts.</li>
+        <li>The original Bendelow plan, if one was produced beyond the surviving inspection letter.</li>
+        <li>A precise construction sequence for individual golf holes and the division of work among Bendelow, Rutherford, Booher, Griffith, and other employees.</li>
+        <li>The number of cottages actually completed, as distinct from lots and rental cottages proposed in promotional material.</li>
+        <li>The exact deed recording and legal description attached to the April 1938 Legion purchase.</li>
+        <li>Original reports that can resolve conflicting dates in later championship and club traditions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container source-list">
+      <span class="eyebrow">Research trail</span>
+      <h2>Primary and Controlling Sources</h2>
+      <p>These sources support the central chronology above. Subscription
+      access may be required for some newspaper scans.</p>
+      <ol>
+        {sources.map(([label, title, url]) => (
+          <li><strong>{label}:</strong> <a href={url} target="_blank" rel="noopener">{title}</a></li>
+        ))}
+      </ol>
+      <div class="story-actions">
+        <a class="btn btn--red" href="/history/club-timeline">View the Timeline</a>
+        <a class="btn btn--navy" href="/history/archive">Explore Archive Coverage</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .story-intro, .source-list, .questions, .people-section { max-width: 960px; }
+  .research-note { background: var(--color-off-white); border-left: 4px solid var(--color-red); margin-top: 2rem; padding: 1.25rem 1.5rem; }
+  .research-note strong { color: var(--color-blue-dark); font-family: var(--font-heading); font-size: 1.05rem; }
+  .research-note p { margin: 0.35rem 0 0; }
+  .eyebrow--gold { color: #ffd966; }
+  .evidence-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(4, 1fr); margin-top: 1.5rem; }
+  .evidence-grid article { border-top: 3px solid var(--color-red); padding-top: 1rem; }
+  .evidence-grid h3 { color: var(--color-white); font-size: 1rem; }
+  .evidence-grid p { color: rgba(255,255,255,0.82); font-size: 0.9rem; margin: 0; }
+  .chapters { max-width: 1080px; }
+  .chapter { border-bottom: 1px solid var(--color-gray-light); display: grid; gap: 2.5rem; grid-template-columns: 180px 1fr; padding: 3rem 0; }
+  .chapter:first-child { padding-top: 0; }
+  .chapter:last-child { border-bottom: 0; padding-bottom: 0; }
+  .chapter__label { color: var(--color-red); font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .chapter h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+  .chapter figure { margin: 2rem 0 0; }
+  .chapter img { aspect-ratio: 16/9; border-radius: var(--radius); box-shadow: var(--shadow-md); object-fit: cover; width: 100%; }
+  .chapter figcaption { color: var(--color-gray); font-size: 0.85rem; margin-top: 0.5rem; }
+  .people-list { display: grid; gap: 0 2rem; grid-template-columns: repeat(2, 1fr); margin-top: 1.5rem; }
+  .people-list article { border-top: 1px solid var(--color-gray-light); padding: 1.2rem 0; }
+  .people-list h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .people-list p { margin: 0; }
+  .people-note { color: var(--color-gray); font-size: 0.9rem; margin-top: 1.25rem; }
+  .questions h2 { color: var(--color-white); }
+  .questions li { color: rgba(255,255,255,0.86); margin-bottom: 0.8rem; }
+  .source-list li { margin-bottom: 0.7rem; }
+  .story-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  @media (max-width: 900px) { .evidence-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 680px) {
+    .chapter { gap: 0.75rem; grid-template-columns: 1fr; }
+    .people-list, .evidence-grid { grid-template-columns: 1fr; }
+  }
+</style>

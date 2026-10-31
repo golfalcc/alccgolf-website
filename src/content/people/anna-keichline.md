@@ -3,7 +3,7 @@ name: "Anna Wagner Keichline®"
 role: "Architect of the ALCC Clubhouse"
 dates: "1889–1943"
 photo: "/images/people/anna-keichline-profile.webp"
-summary: "The first registered woman architect in Pennsylvania, and designer of ALCC's original 1927–1928 clubhouse."
+summary: "The first registered woman architect in Pennsylvania and documented designer of the Colony Club clubhouse, under construction by 1926 and opened in 1927."
 order: 3
 ---
 
@@ -71,8 +71,11 @@ problem solving mindset to make daily life more efficient and functional.
 
 ## The ALCC Clubhouse
 
-Between 1927 and 1928, Keichline designed the original clubhouse at what
-is now the American Legion Country Club. While many architects are
+Contemporary reporting identifies Keichline as the designer of the
+original clubhouse at what is now the American Legion Country Club. The
+building was under construction by August 1926 and formally opened on
+August 12, 1927. Charles H. Baldwin was identified as its builder. While
+many architects are
 remembered for large scale or highly visible projects, Keichline's legacy
 is found in places like this — structures designed for community,
 connection, and longevity. The clubhouse reflects her philosophy of
@@ -113,4 +116,4 @@ takes place inside a structure designed by a woman who was truly ahead of
 her time. It serves as a reminder that history is not just something we
 read about, but something we continue to experience every day.
 
-_For the full founding story of the club, see the [History overview](/history)._
+_For the complete source-based account, see [The Colony Club Story](/history/colony-club-story)._
