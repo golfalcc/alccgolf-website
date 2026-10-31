@@ -3,32 +3,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 ---
 
-<BaseLayout title="StoneHouse Lounge" description="The StoneHouse Lounge & Bar at American Legion Country Club.">
-  <PageHero title="StoneHouse Lounge" subtitle="Great food, great company, great views." />
+<BaseLayout title="StoneHouse Lounge" description="StoneHouse Lounge at American Legion Country Club — great food, cold drinks, and community in Mount Union, PA.">
+  <PageHero title="StoneHouse Lounge" subtitle="A new home for a proud tradition." />
 
   <section class="section">
-    <div class="container">
-      <img class="lounge-logo" src="/images/lounge/stonehouse-logo.webp" alt="StoneHouse Lounge logo" loading="lazy" />
-      <h2>StoneHouse Lounge &amp; Bar</h2>
-      <p>Are you searching for the perfect venue for a wedding reception,
-      special celebration, or golf outing with an exceptional meal
-      afterward? Welcome to the StoneHouse Lounge &amp; Bar — where great
-      food, great company, and great views come together.</p>
+    <div class="container lounge-intro">
+      <div>
+        <img class="lounge-logo" src="/images/lounge/stonehouse-logo.webp" alt="StoneHouse Lounge logo" />
+        <h2>Great Food. Cold Drinks. Good Times.</h2>
+        <p>The StoneHouse Lounge honors the Stone House legacy with great
+        food, cold drinks, and a welcoming place for the community to gather.
+        Find us upstairs at the American Legion Country Club.</p>
 
-      <p>Our newly rebranded lounge offers comfortable seating for over 100
-      guests and features attentive, on-site staff ready to cater to your
-      event needs. Enjoy service from professional bartenders at our fully
-      stocked bar, ensuring your guests are well taken care of from start
-      to finish.</p>
+        <p>The lounge offers comfortable seating for more than 100 guests, a
+        fully stocked bar, and a second-story deck overlooking the golf
+        course. It is also available for wedding receptions, celebrations,
+        golf outings, and other private events.</p>
 
-      <p>When weather permits, relax with a drink on our second-story deck
-      overlooking the golf course and its scenic surroundings — an ideal
-      backdrop for any gathering.</p>
+        <div class="button-row">
+          <a class="btn btn--red" href="tel:+18145424343">Call (814) 542-4343</a>
+          <a class="btn btn--navy" href="https://www.facebook.com/ALCCStoneHouseLounge" target="_blank" rel="noopener">
+            Follow on Facebook
+          </a>
+        </div>
+      </div>
 
-      <p>For availability, pricing, and event details, please contact the
-      golf shop.</p>
-
-      <a class="btn btn--red" href="/contact">Contact the Golf Shop</a>
+      <aside class="lounge-details" aria-label="StoneHouse Lounge details">
+        <span class="eyebrow">Plan Your Visit</span>
+        <h2>Hours &amp; Location</h2>
+        <dl class="hours-list">
+          <div><dt>Monday–Wednesday</dt><dd>2:00 PM–10:00 PM</dd></div>
+          <div><dt>Thursday</dt><dd>2:00 PM–12:00 AM</dd></div>
+          <div><dt>Friday–Saturday</dt><dd>11:00 AM–12:00 AM</dd></div>
+          <div><dt>Sunday</dt><dd>11:00 AM–10:00 PM</dd></div>
+        </dl>
+        <p><strong>Address</strong><br />
+        1 Country Club Road, Upstairs<br />
+        Mount Union, PA 17066</p>
+        <p><strong>Phone</strong><br />
+        <a href="tel:+18145424343">(814) 542-4343, option 2</a></p>
+      </aside>
     </div>
   </section>
 
@@ -36,23 +50,105 @@ import PageHero from '../components/PageHero.astro';
     <div class="container">
       <span class="eyebrow">Food &amp; Drink</span>
       <h2>Menu</h2>
-      <p>Sandwiches, salads, wings, and fryer favorites — served daily.</p>
-      <a class="btn btn--navy" href="/downloads/stonehouse-lounge-menu.pdf" target="_blank" rel="noopener">
-        View the StoneHouse Lounge Menu (PDF)
-      </a>
+      <p>Burgers, sandwiches, loaded fries, salads, fryer favorites, and our
+      famous wings with a full selection of flavors. Debit and credit cards
+      are accepted with a $10 minimum.</p>
+      <div class="button-row">
+        <a class="btn btn--navy" href="/downloads/stonehouse-lounge-menu.pdf" target="_blank" rel="noopener">
+          View the Menu (PDF)
+        </a>
+        <a class="btn btn--red" href="https://www.facebook.com/ALCCStoneHouseLounge" target="_blank" rel="noopener">
+          See Daily Updates
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <span class="eyebrow">This Week</span>
+      <span class="eyebrow">October 26–November 1, 2026</span>
       <h2>Weekly Specials</h2>
-      <img class="specials-image" src="/images/lounge/weekly-specials.webp" alt="StoneHouse Lounge weekly specials" loading="lazy" />
+      <p>Current specials from the StoneHouse Lounge Facebook page.</p>
+      <img class="specials-image" src="/images/lounge/weekly-specials-oct-26-nov-1-2026.jpg" alt="StoneHouse Lounge weekly specials for October 26 through November 1, 2026" loading="lazy" />
+
+      <ul class="specials-list" aria-label="Weekly specials in text">
+        <li><strong>Monday:</strong> Chicken tenders and fries — $9</li>
+        <li><strong>Tuesday:</strong> $2 tacos, $8.50 taco salad, or $5 walking tacos</li>
+        <li><strong>Wednesday:</strong> Mississippi pot roast with mashed potatoes and corn — $9</li>
+        <li><strong>Thursday:</strong> Dozen bone-in wings — $10; dozen boneless wings — $7</li>
+        <li><strong>Friday:</strong> Loaded mac and cheese bowl — $8.50; personal pizza with a half-dozen wings — $10</li>
+        <li><strong>Saturday:</strong> Crispy chicken salad — $8</li>
+        <li><strong>Sunday:</strong> Pick three appetizers — $13</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  .lounge-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
   .lounge-logo { max-width: 220px; margin-bottom: 1.5rem; }
-  .specials-image { max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); margin-top: 1rem; }
+
+  .lounge-details {
+    background: var(--color-off-white);
+    border-top: 5px solid var(--color-red);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.75rem;
+  }
+
+  .hours-list { margin: 0 0 1.5rem; }
+  .hours-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+  .hours-list dt { font-weight: 700; }
+  .hours-list dd { margin: 0; text-align: right; white-space: nowrap; }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .specials-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    margin-top: 1rem;
+  }
+
+  .specials-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1.5rem;
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+  .specials-list li {
+    border-left: 4px solid var(--color-red);
+    background: var(--color-off-white);
+    padding: 0.85rem 1rem;
+  }
+
+  @media (max-width: 800px) {
+    .lounge-intro { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .specials-list { grid-template-columns: 1fr; }
+    .hours-list div { display: block; }
+    .hours-list dd { text-align: left; white-space: normal; }
+  }
 </style>
