@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 
 const announcements = [
+  { text: "Thank you to our members and guests for standing with ALCC through a challenging 2026 season", href: "#season-thanks" },
   { text: "Winter closure begins November 1; the course will reopen for the 2027 season", href: "/golf-course" },
   { text: "2027 membership information will be posted when available", href: "/memberships" },
   { text: "2027 Spring Classic: April 24–25", href: "/events/spring-classic" },
@@ -40,6 +41,21 @@ const quickLinks = [
       </ul>
     </div>
   </div>
+
+  <section class="section season-thanks" id="season-thanks" aria-labelledby="season-thanks-heading">
+    <div class="container season-thanks__inner">
+      <span class="eyebrow">A Message of Thanks</span>
+      <h2 id="season-thanks-heading">Thank You for Standing With ALCC</h2>
+      <p>To our members and guests: thank you for your patience, loyalty, and
+      support through a difficult 2026 season. We know the condition of the
+      greens affected your experience and that the course did not always meet
+      the standard you expect—or the standard we want to provide.</p>
+      <p>We are deeply grateful to everyone who continued to visit, encouraged
+      our staff, and showed how much the future of ALCC matters to this
+      community. Our grounds team continues the work of restoring the affected
+      greens, and we look forward to welcoming you back in 2027.</p>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
@@ -85,6 +101,16 @@ const quickLinks = [
 </BaseLayout>
 
 <style>
+  .season-thanks {
+    background: var(--color-off-white);
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+  .season-thanks__inner {
+    border-left: 6px solid var(--color-red);
+    max-width: 960px;
+    padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  }
+  .season-thanks__inner p:last-child { margin-bottom: 0; }
   .weather-bar {
     background: var(--color-off-white);
     border-top: 1px solid var(--color-gray-light);
