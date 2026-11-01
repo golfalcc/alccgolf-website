@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const sections = [
+  {
+    title: 'The Colony Club Grounds',
+    intro: 'Early views of the course, clubhouse property, roads, greens, and surrounding Juniata Valley landscape.',
+    photos: [
+      ['/images/history/photo-archive/juniata-valley-country-club-gates.webp', 'The entrance road and stone gates of the Juniata Valley Country Club.'],
+      ['/images/history/photo-archive/juniata-valley-country-club-aerial.webp', 'An early aerial postcard view of the Juniata Valley Country Club property.'],
+      ['/images/history/photo-archive/colony-club-circa-1929-aerial.webp', 'Aerial view of the Colony Club property, labeled circa 1929 in the club collection.'],
+      ['/images/history/photo-archive/colony-club-circa-1929-overhead.webp', 'Overhead view of the Colony Club clubhouse, pool, roads, and grounds, circa 1929.'],
+      ['/images/history/photo-archive/colony-club-fairway-3.webp', 'Golfers on the Colony Club course near the third fairway.'],
+      ['/images/history/photo-archive/colony-club-fairway-7.webp', 'A golfer playing the seventh fairway on the early Colony Club course.'],
+      ['/images/history/photo-archive/club-fairway.webp', 'A broad view across the country club fairways toward the clubhouse.'],
+      ['/images/history/photo-archive/juniata-valley-club-greens.webp', 'An early view across the Juniata Valley course and greens.'],
+      ['/images/history/photo-archive/country-club-putting-green.webp', 'The clubhouse and putting green during the country club era.'],
+    ],
+  },
+  {
+    title: 'Dam, Pool, and Recreation',
+    intro: 'The wider Colony Club project included water, swimming, and family recreation alongside golf.',
+    photos: [
+      ['/images/history/photo-archive/colony-club-dam-construction.webp', 'Construction work at the Colony Club dam, labeled circa 1929.'],
+      ['/images/history/photo-archive/colony-club-dam.webp', 'The Colony Club dam and surrounding river landscape.'],
+      ['/images/history/photo-archive/country-club-dam-late-1920s.webp', 'The country club dam in a photograph labeled from the late 1920s.'],
+      ['/images/history/photo-archive/american-legion-pool-club.webp', 'The American Legion Country Club clubhouse and swimming pool.'],
+      ['/images/history/photo-archive/club-pool-tower.webp', 'A swimmer diving from the club pool tower.'],
+    ],
+  },
+  {
+    title: 'People of the Club',
+    intro: 'Names below follow labels preserved with the photographs or firsthand identifications recorded by the club.',
+    photos: [
+      ['/images/history/photo-archive/nan-anderson-bud-pauline-fields.webp', 'Nan Anderson, Bud Fields, and Pauline Fields at the Mount Union course.'],
+      ['/images/history/photo-archive/leo-anderson.webp', 'Leo Anderson at the country club.'],
+      ['/images/history/photo-archive/bud-fields-old-seventeenth-tee.webp', 'Bud Fields teeing off from the old seventeenth tee, identified by Charles Fields in 2026.'],
+      ['/images/history/photo-archive/charlie-fields-bob-wike.webp', 'Charles “Charlie” Fields and Robert “Bob” Wike, as identified in the club collection.'],
+      ['/images/history/photo-archive/charlie-fields-1984.webp', 'Charles “Charlie” Fields in a photograph labeled 1984.'],
+      ['/images/history/photo-archive/charlie-fields-1990.webp', 'Charles “Charlie” Fields playing golf in a photograph labeled 1990.'],
+      ['/images/history/photo-archive/1950-club-championship-labeled-frank-s.webp', 'A 1950 club-championship photograph labeled “Frank S.” in the collection; additional identification is welcome.'],
+      ['/images/history/photo-archive/dave-halk-charlie-coons.webp', 'Dave Halk and Charlie Coons, as labeled on the photograph.'],
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Historical Photo Archive"
+  description="Historic photographs of the Juniata Valley Colony Club, American Legion Country Club, its course, facilities, and people."
+  image="/images/history/photo-archive/colony-club-circa-1929-overhead.webp"
+>
+  <PageHero title="Historical Photo Archive" subtitle="Course views, recreation facilities, and people preserved in the MU Country Club collection." />
+
+  <section class="section">
+    <div class="container archive-intro">
+      <span class="eyebrow">MU Country Club photograph collection</span>
+      <h2>Photographs With Their Context Preserved</h2>
+      <p>These images are drawn from the club's historical photograph files.
+      Captions reproduce collection labels and verified identifications; they
+      do not use visual resemblance alone to assign names. A photograph's
+      inclusion in this general archive does not associate it with an
+      individual profile unless that connection is separately documented.</p>
+      <p>Select any photograph to open a larger copy. If you can supply a
+      date, location, or identification, please <a href="/contact">contact the club</a>
+      so the archive can be improved.</p>
+    </div>
+  </section>
+
+  {sections.map((section, index) => (
+    <section class:list={['section', { 'section--off-white': index % 2 === 0 }]}>
+      <div class="container">
+        <h2>{section.title}</h2>
+        <p class="section-intro">{section.intro}</p>
+        <div class="photo-grid">
+          {section.photos.map(([src, caption]) => (
+            <figure class="photo-card">
+              <a href={src} target="_blank" rel="noopener" aria-label={`Open larger image: ${caption}`}>
+                <img src={src} alt={caption} loading="lazy" />
+              </a>
+              <figcaption>{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .archive-intro { max-width: 850px; }
+  .section-intro { color: var(--color-gray); max-width: 760px; }
+  .photo-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 1.5rem;
+  }
+  .photo-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin: 0;
+    overflow: hidden;
+  }
+  .photo-card a { display: block; background: #e9e6df; }
+  .photo-card img {
+    aspect-ratio: 4 / 3;
+    display: block;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    width: 100%;
+  }
+  .photo-card a:hover img { transform: scale(1.015); }
+  .photo-card figcaption {
+    color: var(--color-gray);
+    font-size: 0.86rem;
+    line-height: 1.45;
+    padding: 0.85rem 1rem 1rem;
+  }
+  @media (max-width: 850px) { .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .photo-grid { grid-template-columns: 1fr; } }
+</style>

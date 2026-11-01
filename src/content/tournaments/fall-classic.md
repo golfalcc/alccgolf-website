@@ -60,11 +60,11 @@ late-season team-event history.
 Recent years link straight through to full results on GolfGenius.
 
 <div class="badge-grid">
-<a class="badge-card" href="http://fc2019alcc.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2019</span></a>
-<a class="badge-card" href="http://alccfallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2020</span></a>
-<a class="badge-card" href="http://alcc-fallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2021</span></a>
-<a class="badge-card" href="http://alcc-2022fallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2022</span></a>
-<a class="badge-card" href="http://alcc-fallclassic23.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2023</span></a>
-<a class="badge-card" href="http://alcc-fallclassic24.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2024</span></a>
-<a class="badge-card" href="http://alcc-fallclassic25.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2025</span></a>
+<a class="badge-card" href="https://fc2019alcc.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2019</span></a>
+<a class="badge-card" href="https://alccfallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2020</span></a>
+<a class="badge-card" href="https://alcc-fallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2021</span></a>
+<a class="badge-card" href="https://alcc-2022fallclassic.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2022</span></a>
+<a class="badge-card" href="https://alcc-fallclassic23.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2023</span></a>
+<a class="badge-card" href="https://alcc-fallclassic24.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2024</span></a>
+<a class="badge-card" href="https://alcc-fallclassic25.golfgenius.com" target="_blank" rel="noopener"><img src="/images/fall-classic/logo.webp" alt="Fall Classic logo" loading="lazy" /><span>2025</span></a>
 </div>

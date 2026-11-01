@@ -6,11 +6,34 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 const {
   title,
   description = "American Legion Country Club — 18-hole golf course, StoneHouse Lounge, and event venue in Mount Union, PA.",
+  image = "/images/home/hero-painting.webp",
 } = Astro.props;
+
+const fullTitle = `${title} | American Legion Country Club`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const socialImageURL = new URL(image, Astro.site ?? Astro.url.origin);
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GolfCourse',
+  name: 'American Legion Country Club',
+  url: 'https://alccgolf.com',
+  image: socialImageURL.toString(),
+  telephone: '+1-814-542-4343',
+  email: 'golf.alcc@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1 Country Club Road',
+    addressLocality: 'Mount Union',
+    addressRegion: 'PA',
+    postalCode: '17066',
+    addressCountry: 'US',
+  },
+};
 ---
 
 <!doctype html>
@@ -27,7 +50,19 @@ const {
     <meta name="theme-color" content="#0a2f5c" />
     <meta name="google-site-verification" content="WQQQ-vix6Q7t9teDQWjxj4So6A5E2ukJFJYLKDoeFRQ" />
     <meta name="description" content={description} />
-    <title>{title} | American Legion Country Club</title>
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="American Legion Country Club" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <title>{fullTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

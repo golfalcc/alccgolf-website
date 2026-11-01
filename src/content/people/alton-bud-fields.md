@@ -1,7 +1,7 @@
 ---
 name: "Alton \"Bud\" Fields"
 role: "Fourteen-Time Club Champion and Regional Amateur Champion"
-photo: "/images/people/alton-bud-fields-profile-styled.png"
+photo: "/images/people/alton-bud-fields-profile-styled.webp"
 summary: "A fourteen-time ALCC club champion whose victories from 1945 through 1971, course records, Mount Union Open title, and Central Counties championship made him one of the defining golfers in club history."
 order: 5
 ---
@@ -31,7 +31,7 @@ five-under-par 70 during a putting tournament. The professional record
 at the time was reported as 68.
 
 <figure class="person-document">
-  <img src="/images/people/bud-fields-1950-course-record-article.png" alt="Newspaper article reporting Bud Fields's five-under-par course-record round in 1950" loading="lazy">
+  <img src="/images/people/bud-fields-1950-course-record-article.webp" alt="Newspaper article reporting Bud Fields's five-under-par course-record round in 1950" loading="lazy">
   <figcaption><em>The Daily News</em>, July 11, 1950, reporting Fields's five-under-par 70 and new amateur course record.</figcaption>
 </figure>
 
@@ -49,11 +49,11 @@ major part of Mount Union's golf calendar.
 
 <div class="person-photo-grid">
   <figure>
-    <img src="/images/people/bud-fields-1952-mount-union-open-article.png" alt="Newspaper article reporting Bud Fields's victory in the 1952 Mount Union Open" loading="lazy">
+    <img src="/images/people/bud-fields-1952-mount-union-open-article.webp" alt="Newspaper article reporting Bud Fields's victory in the 1952 Mount Union Open" loading="lazy">
     <figcaption><em>The Daily News</em>, July 7, 1952, reporting Fields's victory in the Mount Union Open.</figcaption>
   </figure>
   <figure>
-    <img src="/images/people/bud-fields-1952-mount-union-open-photo.png" alt="Bud Fields with Lew Worsham, Harold Dore, and Leo Anderson during the 1952 Mount Union Open" loading="lazy">
+    <img src="/images/people/bud-fields-1952-mount-union-open-photo.webp" alt="Bud Fields with Lew Worsham, Harold Dore, and Leo Anderson during the 1952 Mount Union Open" loading="lazy">
     <figcaption>Bud Fields with 1947 U.S. Open champion Lew Worsham and professionals Harold Dore and Leo Anderson during the 1952 Mount Union Open. <em>Daily News</em> photograph.</figcaption>
   </figure>
 </div>
@@ -99,11 +99,11 @@ did not record.
 
 <div class="person-photo-grid">
   <figure>
-    <img src="/images/people/bud-fields-old-seventeenth-tee.jpg" alt="Bud Fields teeing off from the old seventeenth tee at the Mount Union course" loading="lazy">
+    <img src="/images/people/bud-fields-old-seventeenth-tee.webp" alt="Bud Fields teeing off from the old seventeenth tee at the Mount Union course" loading="lazy">
     <figcaption>Bud Fields teeing off from the old seventeenth tee, identified by his son Charles Fields on April 13, 2026.</figcaption>
   </figure>
   <figure>
-    <img src="/images/people/bud-fields-with-family.jpg" alt="Nan Anderson, Bud Fields, and Pauline Fields at the Mount Union course" loading="lazy">
+    <img src="/images/people/bud-fields-with-family.webp" alt="Nan Anderson, Bud Fields, and Pauline Fields at the Mount Union course" loading="lazy">
     <figcaption>Nan Anderson (left), Bud Fields (center), and Pauline Fields at the Mount Union course. Charles Fields confirmed the photograph on April 13, 2026; the names and order are also recorded on a labeled club copy.</figcaption>
   </figure>
 </div>

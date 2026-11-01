@@ -64,7 +64,7 @@ import PageHero from '../components/PageHero.astro';
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="weekly-specials" data-expires="2026-11-02T05:00:00Z">
     <div class="container">
       <span class="eyebrow">October 26–November 1, 2026</span>
       <h2>Weekly Specials</h2>
@@ -82,6 +82,14 @@ import PageHero from '../components/PageHero.astro';
       </ul>
     </div>
   </section>
+
+  <script is:inline>
+    const specials = document.getElementById('weekly-specials');
+    const expiration = specials?.dataset.expires;
+    if (specials && expiration && Date.now() >= Date.parse(expiration)) {
+      specials.innerHTML = '<div class="container"><span class="eyebrow">Weekly Specials</span><h2>See This Week\'s Specials</h2><p>Weekly food and drink specials change regularly. Visit the StoneHouse Lounge Facebook page for the latest menu.</p><a class="btn btn--red" href="https://www.facebook.com/ALCCStoneHouseLounge" target="_blank" rel="noopener">View Current Specials on Facebook</a></div>';
+    }
+  </script>
 </BaseLayout>
 
 <style>

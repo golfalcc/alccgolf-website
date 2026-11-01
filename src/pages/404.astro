@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Page Not Found" description="The requested American Legion Country Club page could not be found.">
+  <PageHero title="Page Not Found" subtitle="That page may have moved, but the clubhouse is still right where you left it." />
+  <section class="section">
+    <div class="container not-found">
+      <span class="eyebrow">404</span>
+      <h2>Let's Get You Back on Course</h2>
+      <p>Use one of the links below to return to the main areas of the site.</p>
+      <div class="actions">
+        <a class="btn btn--red" href="/">Return Home</a>
+        <a class="btn btn--navy" href="/golf-course">Golf Course</a>
+        <a class="btn btn--navy" href="/events">Events</a>
+        <a class="btn btn--navy" href="/history">History</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found { max-width: 760px; text-align: center; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.5rem; }
+</style>

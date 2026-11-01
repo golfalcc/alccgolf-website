@@ -95,12 +95,12 @@ Invitational.
 Recent years link straight through to full results on GolfGenius.
 
 <div class="badge-grid">
-<a class="badge-card" href="http://alccspring21.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2021</span></a>
-<a class="badge-card" href="http://alcc-springclassic22.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2022</span></a>
-<a class="badge-card" href="http://alcc-springclassic23.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2023</span></a>
-<a class="badge-card" href="http://alcc-springclassic24.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2024</span></a>
-<a class="badge-card" href="http://alcc-springclassic25.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2025</span></a>
-<a class="badge-card" href="http://alcc-spring26.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2026</span></a>
+<a class="badge-card" href="https://alccspring21.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2021</span></a>
+<a class="badge-card" href="https://alcc-springclassic22.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2022</span></a>
+<a class="badge-card" href="https://alcc-springclassic23.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2023</span></a>
+<a class="badge-card" href="https://alcc-springclassic24.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2024</span></a>
+<a class="badge-card" href="https://alcc-springclassic25.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2025</span></a>
+<a class="badge-card" href="https://alcc-spring26.golfgenius.com" target="_blank" rel="noopener"><img src="/images/spring-classic/logo.webp" alt="Spring Classic logo" loading="lazy" /><span>2026</span></a>
 </div>
 
 _Club records show gaps in some years (no results recorded for 1993,

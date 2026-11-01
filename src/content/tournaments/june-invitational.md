@@ -113,13 +113,13 @@ Every year gets its own badge. Years with an active GolfGenius page link straigh
 <div class="badge-card badge-card--static"><img src="/images/june-invitational/2017.webp" alt="2017 June Invitational badge" loading="lazy" /><span>2017</span></div>
 <div class="badge-card badge-card--static"><img src="/images/june-invitational/2018.webp" alt="2018 June Invitational badge" loading="lazy" /><span>2018</span></div>
 <div class="badge-card badge-card--static"><img src="/images/june-invitational/2019.webp" alt="2019 June Invitational badge" loading="lazy" /><span>2019</span></div>
-<a class="badge-card" href="http://alccsummer.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2020.webp" alt="2020 June Invitational badge" loading="lazy" /><span>2020</span></a>
-<a class="badge-card" href="http://alcc-juneinvitational47.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2021.webp" alt="2021 June Invitational badge" loading="lazy" /><span>2021</span></a>
-<a class="badge-card" href="http://alcc-48juneinvitational.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2022.webp" alt="2022 June Invitational badge" loading="lazy" /><span>2022</span></a>
-<a class="badge-card" href="http://juneinvitational49.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2023.webp" alt="2023 June Invitational badge" loading="lazy" /><span>2023</span></a>
-<a class="badge-card" href="http://alcc-juneinvitational50.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2024.webp" alt="2024 June Invitational badge" loading="lazy" /><span>2024</span></a>
-<a class="badge-card" href="http://alcc-juneinvitational51.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2025.webp" alt="2025 June Invitational badge" loading="lazy" /><span>2025</span></a>
-<a class="badge-card" href="http://alcc-52juneinvitational.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2026.webp" alt="2026 June Invitational badge" loading="lazy" /><span>2026</span></a>
+<a class="badge-card" href="https://alccsummer.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2020.webp" alt="2020 June Invitational badge" loading="lazy" /><span>2020</span></a>
+<a class="badge-card" href="https://alcc-juneinvitational47.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2021.webp" alt="2021 June Invitational badge" loading="lazy" /><span>2021</span></a>
+<a class="badge-card" href="https://alcc-48juneinvitational.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2022.webp" alt="2022 June Invitational badge" loading="lazy" /><span>2022</span></a>
+<a class="badge-card" href="https://juneinvitational49.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2023.webp" alt="2023 June Invitational badge" loading="lazy" /><span>2023</span></a>
+<a class="badge-card" href="https://alcc-juneinvitational50.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2024.webp" alt="2024 June Invitational badge" loading="lazy" /><span>2024</span></a>
+<a class="badge-card" href="https://alcc-juneinvitational51.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2025.webp" alt="2025 June Invitational badge" loading="lazy" /><span>2025</span></a>
+<a class="badge-card" href="https://alcc-52juneinvitational.golfgenius.com" target="_blank" rel="noopener"><img src="/images/june-invitational/2026.webp" alt="2026 June Invitational badge" loading="lazy" /><span>2026</span></a>
 <div class="badge-card badge-card--static"><img src="/images/june-invitational/2027.webp" alt="2027 June Invitational badge — 53rd annual" loading="lazy" /><span>2027</span></div>
 </div>
 

@@ -35,6 +35,7 @@ const nav = [
       { label: "The Colony Club Story", href: "/history/colony-club-story" },
       { label: "Club & Course Timeline", href: "/history/club-timeline" },
       { label: "Historical Archive", href: "/history/archive" },
+      { label: "Historical Photo Archive", href: "/history/photo-archive" },
       { label: "Ladies' Club Champions", href: "/history/ladies-club-champions" },
       { label: "Men's Club Champions", href: "/history/mens-club-champions" },
       { label: "Seniors Club Champions", href: "/history/seniors-club-champions" },
@@ -49,6 +50,9 @@ const nav = [
   { label: "Pro Shop", href: "/pro-shop" },
   { label: "Contact Us", href: "/contact" },
 ];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => (href.replace(/\/$/, '') || '/') === currentPath;
 ---
 
 <div class="top-bar">
@@ -68,7 +72,7 @@ const nav = [
 <aside class="seasonal-alert" aria-label="Golf course winter closure notice">
   <div class="container seasonal-alert__inner">
     <strong>Winter Closure:</strong>
-    <span>The golf course will close for the winter beginning November 1, 2026.</span>
+    <span>Winter closure begins November 1, 2026. The course will remain closed until the 2027 season.</span>
     <a href="/golf-course">Course details</a>
   </div>
 </aside>
@@ -88,11 +92,11 @@ const nav = [
       <ul>
         {nav.map((item) => (
           <li class:list={["nav-item", { "has-children": item.children }]}>
-            <a href={item.href}>{item.label}</a>
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
             {item.children && (
               <ul class="dropdown">
                 {item.children.map((child) => (
-                  <li><a href={child.href}>{child.label}</a></li>
+                  <li><a href={child.href} aria-current={isCurrent(child.href) ? 'page' : undefined}>{child.label}</a></li>
                 ))}
               </ul>
             )}
@@ -204,6 +208,8 @@ const nav = [
     font-weight: 600;
   }
   .nav-item > a:hover { color: var(--color-red); text-decoration: none; }
+  .nav-item > a[aria-current="page"],
+  .dropdown a[aria-current="page"] { color: var(--color-red); }
 
   .dropdown {
     display: none;
@@ -269,5 +275,18 @@ const nav = [
   toggle?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.focus();
+    }
   });
 </script>
