@@ -67,7 +67,8 @@ const { name, role, dates, photo, summary } = entry.data;
     margin: 1.5rem 0 2.25rem;
   }
   .person-content :global(.person-photo-grid figure),
-  .person-content :global(.person-document) {
+  .person-content :global(.person-document),
+  .person-content :global(.person-feature) {
     margin: 0;
     background: var(--color-off-white);
     border: 1px solid #d8dce3;
@@ -79,8 +80,12 @@ const { name, role, dates, photo, summary } = entry.data;
     max-width: 430px;
     margin: 1.5rem auto 2.25rem;
   }
+  .person-content :global(.person-feature) {
+    margin: 1.5rem 0 2.25rem;
+  }
   .person-content :global(.person-photo-grid img),
-  .person-content :global(.person-document img) {
+  .person-content :global(.person-document img),
+  .person-content :global(.person-feature img) {
     display: block;
     width: 100%;
     height: auto;
@@ -88,7 +93,8 @@ const { name, role, dates, photo, summary } = entry.data;
     border-radius: 0;
   }
   .person-content :global(.person-photo-grid figcaption),
-  .person-content :global(.person-document figcaption) {
+  .person-content :global(.person-document figcaption),
+  .person-content :global(.person-feature figcaption) {
     padding: 0.8rem 1rem 1rem;
     color: var(--color-gray);
     font-size: 0.85rem;
